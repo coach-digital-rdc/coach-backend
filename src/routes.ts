@@ -16,6 +16,7 @@ import imageRouter from "./modules/image/routes";
 import logRouter from "./modules/logs/routes";
 import dashboardRouter from "./modules/dashboard/routes";
 import config from "./config";
+import AIRouter from "./modules/artificial-inteligence/routes";
 
 const packageJson: any = require("../package.json");
 
@@ -35,6 +36,7 @@ const Routes = {
     dashboardRouter(app);
     competenceRouter(app);
     logRouter(app);
+    AIRouter(app);
 
     app.get(`/${config.country}/api/`, (_req: Request, res: Response) => {
       res.send(
