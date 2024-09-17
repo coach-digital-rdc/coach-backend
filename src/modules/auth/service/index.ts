@@ -118,7 +118,7 @@ export default class Authentication {
 
     const msg = {
       to: email,
-      from: "noreply@quanti.ca",
+      from: "cehrd.mentoring@gmail.com",
       subject: `${process.env.APP_NAME} - ${
         process.env.COUNTRY === "np" ? "एक-पटकको पासकोड" : "one-time passcode"
       }`,

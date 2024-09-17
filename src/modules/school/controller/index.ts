@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { constants } from "http2";
 import { SchoolService } from "../service";
 import { RegionService } from "../../region/service";
+import { School } from "../entity/school.entity";
 
 const {
   HTTP_STATUS_OK,
@@ -66,16 +67,35 @@ export default class SchoolController {
     _req: Request,
     res: Response
   ): Promise<any> => {
+    const { page, per_page } = _req.query;
+    const currentPage = page ? +page : 1;
+    const perPage = per_page ? +per_page : 10;
+
     try {
-      let list = [];
+      // let list = [];
+      let list: {
+        schools: School[];
+        pagination: {
+          per_page: number;
+          page: number;
+          total_count: number;
+        };
+      };
       if (res.locals?.authUser?.region_id) {
         const regions = await RegionService.getChildren(
           res.locals?.authUser.region_id
         );
 
-        list = await SchoolService.findAll(regions.map((item) => `${item.id}`));
+        list = await SchoolService.findAll({
+          regionIds: regions.map((item) => `${item.id}`),
+          page: currentPage,
+          per_page: perPage,
+        });
       } else {
-        list = await SchoolService.findAll();
+        list = await SchoolService.findAll({
+          page: currentPage,
+          per_page: perPage,
+        });
       }
 
       return res.status(HTTP_STATUS_OK).send(list);

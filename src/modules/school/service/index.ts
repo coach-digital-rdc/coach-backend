@@ -104,17 +104,53 @@ export class SchoolService {
     });
   };
 
-  static findAll = async (regionIds?: string[]): Promise<School[]> => {
+  static findAll = async (data: {
+    regionIds?: string[];
+    per_page: number;
+    page: number;
+  }) => {
+    const { regionIds, per_page, page } = data;
+    const skip = (page - 1) * per_page;
     const schoolRepository = await dataSource.getRepository(School);
-    if (!regionIds) {
-      return schoolRepository.find();
+
+    let whereQuery = {};
+    if (regionIds) {
+      whereQuery = { ...whereQuery, region_id: In(regionIds) };
     }
 
-    return schoolRepository.find({
-      where: {
-        region_id: In(regionIds),
+    // if (!regionIds) {
+    //   return schoolRepository.find({
+    //     relations: { region: { parent: { parent: true } } },
+    //     skip: skip,
+    //     take: per_page,
+    //   });
+    // }
+
+    const [schools, schoolCount] = await Promise.all([
+      schoolRepository.find({
+        // where: whereQuery,
+        relations: { region: { parent: { parent: true } } },
+        skip: skip,
+        take: per_page,
+      }),
+      schoolRepository.count({ where: whereQuery }),
+    ]);
+    // return schools;
+    return {
+      schools: schools,
+      pagination: {
+        per_page,
+        page,
+        total_count: schoolCount,
       },
-    });
+    };
+
+    // return schoolRepository.find({
+    //   where: query,
+    //   relations: { region: { parent: { parent: true } } },
+    //   skip: skip,
+    //   take: per_page,
+    // });
   };
 
   static encryptId = (id: string): string => {
