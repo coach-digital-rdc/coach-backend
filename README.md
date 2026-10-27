@@ -10,7 +10,9 @@
     - `openssl rand -base64 24` for `PASSWORD_SALT`
   - Leave `SENDGRID_API_KEY` empty: in development the OTP code is printed in the server log (`[OTP dev] email=... code=...`)
   - Run `npm install`
+  - Run `npm run migration:run` to create the tables
   - Run `npm run start:dev`
+  - Optional: run `npm run seed:fr` to load the French demo data (regions, schools, coaches, teachers, competences, questions and sessions; all fictitious). Admin login: `admin.test@example.com`, coach login: `coach.demo@example.com`
   - API: `http://localhost:3000/{COUNTRY}/api/`
   - Swagger: `http://localhost:3000/{COUNTRY}/api/docs`
 
