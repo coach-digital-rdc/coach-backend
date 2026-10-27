@@ -131,13 +131,23 @@ export default class Authentication {
 
     const otpRepository = await dataSource.getRepository(Otp);
 
-    await sgMail.send(msg);
-
-    return await otpRepository.save({
+    const otp = await otpRepository.save({
       email,
       code,
       created_at: new Date().getTime(),
     });
+
+    // In development, or without a valid SendGrid key, the code is not sent:
+    // it is printed in the server log so that the OTP login can be tested locally.
+    const apiKey = process.env.SENDGRID_API_KEY || "";
+    if (process.env.NODE_ENV === "development" || !apiKey.startsWith("SG.")) {
+      console.log(`[OTP dev] email=${email} code=${code}`);
+      return otp;
+    }
+
+    await sgMail.send(msg);
+
+    return otp;
   };
 
   public static saveLoginAttempt = async (email: string) => {

@@ -65,7 +65,12 @@ export default class AuthenticationController {
         return res.status(404).send({ user });
       }
 
-      await Authentication.sendEmailOTP(user.email, user?.name || "", 8);
+      try {
+        await Authentication.sendEmailOTP(user.email, user?.name || "", 8);
+      } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: "OTP could not be sent" });
+      }
 
       return res.status(200).send(email);
     }
@@ -124,7 +129,12 @@ export default class AuthenticationController {
         return res.status(404).send({ coach });
       }
 
-      await Authentication.sendEmailOTP(coach.email, coach?.name || "", 6);
+      try {
+        await Authentication.sendEmailOTP(coach.email, coach?.name || "", 6);
+      } catch (err) {
+        console.log(err);
+        return res.status(500).send({ message: "OTP could not be sent" });
+      }
 
       return res.status(200).send(email);
     }

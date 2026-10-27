@@ -8,6 +8,10 @@ import { RegionService } from "../../region/service";
 
 const algorithm = "aes-256-ecb";
 
+// AES-256 requires a 32-byte key: it is derived from JWT_SECRET with SHA-256,
+// so any secret format (e.g. `openssl rand -hex 32`) can be used.
+const getKey = () => crypto.createHash("sha256").update(config.secret).digest();
+
 type SchoolBatchResponse = {
   successCount: number;
   failItems: string[][];
@@ -120,7 +124,7 @@ export class SchoolService {
   static encryptId = (id: string): string => {
     const cipher = crypto.createCipheriv(
       algorithm,
-      Buffer.from(config.secret),
+      getKey(),
       null
     );
     let encrypted = cipher.update(id, "utf8", "hex");
@@ -131,7 +135,7 @@ export class SchoolService {
   static decryptId = (key: string): string => {
     const decipher = crypto.createDecipheriv(
       algorithm,
-      Buffer.from(config.secret),
+      getKey(),
       null
     );
     let decrypted = decipher.update(key, "hex", "utf8");
