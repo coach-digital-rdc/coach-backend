@@ -1,16 +1,22 @@
 # Coache digital SL API
 
-### [Api docs](http://44.213.115.141:3000/api-docs)
 
 ## Setup dev
 
-  - Copy .env.example to .env
+  - Requirements: Node.js 18+, npm, PostgreSQL (database `coaching`)
+  - Copy `.env.example` to `.env` and fill in the PostgreSQL connection
+  - Generate the two local secrets and paste them in `.env`:
+    - `openssl rand -hex 32` for `JWT_SECRET`
+    - `openssl rand -base64 24` for `PASSWORD_SALT`
+  - Leave `SENDGRID_API_KEY` empty: in development the OTP code is printed in the server log (`[OTP dev] email=... code=...`)
   - Run `npm install`
   - Run `npm run start:dev`
+  - API: `http://localhost:3000/{COUNTRY}/api/`
+  - Swagger: `http://localhost:3000/{COUNTRY}/api/docs`
 
 ## Setup prod with docker
 
   - Copy .env.example to .env
   - Run `npm run build-docker` or `docker build -t coach-backend-sl .`
   - Run `docker-compose up -d`
-  - Open `http://localhost:3000/api-docs`
+  - Open `http://localhost:3000/{COUNTRY}/api/docs`
