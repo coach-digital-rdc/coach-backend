@@ -1,6 +1,7 @@
 MIT License
 
 Copyright (c) 2024 International Bank for Reconstruction and Development
+Copyright (c) 2026 Government of the Democratic Republic of the Congo (MENC/SERNAFOR)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
