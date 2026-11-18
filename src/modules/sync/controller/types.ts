@@ -10,6 +10,7 @@ import { Coach } from "../../coach/entity/coach.entity";
 import { CoachSchool } from "../../coach/entity/coach-school.entity";
 import { SessionActivity } from "../../session/entity/session-activity.entity";
 import { ObservationNote } from "../../session/entity/observation-note.entity";
+import { CompetenceScore } from "../../session/entity/competence-score.entity";
 import { Documentation } from "../../session/entity/documentation.entity";
 import { ChecklistItem } from "../../session/entity/checklist-item.entity";
 
@@ -24,6 +25,7 @@ export type DataChanges = {
   sessionActivities?: SessionActivity[];
   documentations?: Documentation[];
   observationNotes?: ObservationNote[];
+  competenceScores?: CompetenceScore[];
 };
 
 export type DataToSync = {
@@ -48,6 +50,7 @@ export type SyncData = {
   sessionActivities: SessionActivity[];
   documentations: Documentation[];
   observationNotes: ObservationNote[];
+  competenceScores: CompetenceScore[];
   checklistItems: ChecklistItem[];
   total: number;
 };

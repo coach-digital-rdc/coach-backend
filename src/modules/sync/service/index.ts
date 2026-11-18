@@ -15,6 +15,7 @@ import { CompetenceService } from "../../competencies/service";
 import { QuestionService } from "../../question/service";
 import { SessionActivity } from "../../session/entity/session-activity.entity";
 import { ObservationNote } from "../../session/entity/observation-note.entity";
+import { CompetenceScore } from "../../session/entity/competence-score.entity";
 import { Documentation } from "../../session/entity/documentation.entity";
 import { ChecklistItem } from "../../session/entity/checklist-item.entity";
 
@@ -54,6 +55,10 @@ export class SyncService {
         changes.observationNotes || [],
         true
       );
+      await this.saveSyncByEntity(
+        CompetenceScore,
+        changes.competenceScores || []
+      );
       await this.saveSyncByEntity(Feedback, changes.feedbacks || []);
 
       const { coaches, coachSchools } = await this.getCoachDataToSync(school);
@@ -62,6 +67,9 @@ export class SyncService {
       const answers = await this.getAnswerToSync(sessions);
       const sessionActivities = await this.getSessionActivitiesToSync(sessions);
       const documentations = await this.getDocumentationsToSync(sessions);
+      const competenceScores = await dataSource
+        .getRepository(CompetenceScore)
+        .find({ where: { session_id: In(sessions.map((item) => item.id)) } });
       const observationNotes = await dataSource
         .getRepository(ObservationNote)
         .find({ where: { session_id: In(sessions.map((item) => item.id)) } });
@@ -85,6 +93,7 @@ export class SyncService {
         sessionActivities,
         documentations,
         observationNotes,
+        competenceScores,
         checklistItems,
         total:
           coaches.length +
