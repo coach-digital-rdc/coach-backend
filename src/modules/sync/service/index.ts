@@ -1,4 +1,4 @@
-import { EntityTarget, In, MoreThan, ObjectLiteral } from "typeorm";
+import { EntityTarget, In, IsNull, MoreThan, ObjectLiteral } from "typeorm";
 import { Feedback } from "../../session/entity/feedback.entity";
 import { Teacher } from "../../teacher/entity/teacher.entity";
 import { Session } from "../../session/entity/session.entity";
@@ -13,6 +13,16 @@ import { Question } from "../../question/entity/question.entity";
 import { CoachSchool } from "../../coach/entity/coach-school.entity";
 import { CompetenceService } from "../../competencies/service";
 import { QuestionService } from "../../question/service";
+import { SessionActivity } from "../../session/entity/session-activity.entity";
+import { ObservationNote } from "../../session/entity/observation-note.entity";
+import { CompetenceScore } from "../../session/entity/competence-score.entity";
+import { SessionSignature } from "../../session/entity/session-signature.entity";
+import { Pdp } from "../../pdp/entity/pdp.entity";
+import { PdpObjective } from "../../pdp/entity/pdp-objective.entity";
+import { PdpRuleSet } from "../../pdp/entity/pdp-rule-set.entity";
+import { PdpLibraryItem } from "../../pdp/entity/pdp-library-item.entity";
+import { Documentation } from "../../session/entity/documentation.entity";
+import { ChecklistItem } from "../../session/entity/checklist-item.entity";
 
 export class SyncService {
   static findAll = async (): Promise<Teacher[]> => {
@@ -40,12 +50,52 @@ export class SyncService {
       await this.saveSyncByEntity(Teacher, changes.teachers || []);
       await this.saveSyncByEntity(Session, changes.sessions || []);
       await this.saveSyncByEntity(Answer, changes.answers || []);
+      await this.saveSyncByEntity(
+        SessionActivity,
+        changes.sessionActivities || []
+      );
+      await this.saveSyncByEntity(Documentation, changes.documentations || []);
+      await this.saveSyncByEntity(
+        ObservationNote,
+        changes.observationNotes || [],
+        true
+      );
+      await this.saveSyncByEntity(
+        CompetenceScore,
+        changes.competenceScores || []
+      );
+      await this.saveSyncByEntity(Pdp, changes.pdps || []);
+      await this.saveSyncByEntity(
+        SessionSignature,
+        changes.sessionSignatures || []
+      );
+      await this.saveSyncByEntity(
+        PdpObjective,
+        changes.pdpObjectives || [],
+        true
+      );
       await this.saveSyncByEntity(Feedback, changes.feedbacks || []);
 
       const { coaches, coachSchools } = await this.getCoachDataToSync(school);
       const teachers = await this.getDataToSync(Teacher, undefined, school);
       const sessions = await this.getDataToSync(Session, lastSync, school);
       const answers = await this.getAnswerToSync(sessions);
+      const sessionActivities = await this.getSessionActivitiesToSync(sessions);
+      const documentations = await this.getDocumentationsToSync(sessions);
+      const { pdps, pdpObjectives, pdpRuleSets, pdpLibraryItems } =
+        await this.getPdpToSync(sessions);
+      const sessionSignatures = await dataSource
+        .getRepository(SessionSignature)
+        .find({ where: { session_id: In(sessions.map((item) => item.id)) } });
+      const competenceScores = await dataSource
+        .getRepository(CompetenceScore)
+        .find({ where: { session_id: In(sessions.map((item) => item.id)) } });
+      const observationNotes = await dataSource
+        .getRepository(ObservationNote)
+        .find({ where: { session_id: In(sessions.map((item) => item.id)) } });
+      const checklistItems = await dataSource
+        .getRepository(ChecklistItem)
+        .find({ where: { deleted_at: IsNull() }, order: { display_order: "ASC" } });
       const feedbacks = await this.getFeedbackToSync(school, lastSync);
       const competencies = await CompetenceService.findAll();
       const questions = await QuestionService.findAll();
@@ -60,6 +110,16 @@ export class SyncService {
         sessions,
         teachers,
         answers,
+        sessionActivities,
+        documentations,
+        observationNotes,
+        competenceScores,
+        pdps,
+        sessionSignatures,
+        pdpObjectives,
+        pdpRuleSets,
+        pdpLibraryItems,
+        checklistItems,
         total:
           coaches.length +
           feedbacks.length +
@@ -72,9 +132,11 @@ export class SyncService {
     }
   };
 
+  // keepDeletion: the deletion made on the device is kept (e.g. a deleted note)
   static saveSyncByEntity = async (
     Entity: EntityTarget<ObjectLiteral>,
-    changes: any[]
+    changes: any[],
+    keepDeletion = false
   ) => {
     const repository = await dataSource.getRepository(Entity);
 
@@ -84,7 +146,7 @@ export class SyncService {
           ...item,
           created_at: new Date(item.created_at).toJSON(),
           updated_at: undefined,
-          deleted_at: undefined,
+          deleted_at: keepDeletion ? item.deleted_at || null : undefined,
         })
       )
     );
@@ -92,6 +154,42 @@ export class SyncService {
 
   static getAnswerToSync = async (sessions: Session[]) => {
     const repository = await dataSource.getRepository(Answer);
+    return await repository.find({
+      where: { session_id: In(sessions.map((item) => item.id)) },
+    });
+  };
+
+  static getSessionActivitiesToSync = async (sessions: Session[]) => {
+    const repository = await dataSource.getRepository(SessionActivity);
+    return await repository.find({
+      where: { session_id: In(sessions.map((item) => item.id)) },
+    });
+  };
+
+  // Plans of the sessions, and the published rules that the devices apply offline
+  static getPdpToSync = async (sessions: Session[]) => {
+    const pdps = await dataSource.getRepository(Pdp).find({
+      where: { session_id: In(sessions.map((item) => item.id)) },
+    });
+    const pdpObjectives = await dataSource.getRepository(PdpObjective).find({
+      where: { pdp_id: In(pdps.map((item) => item.id)) },
+    });
+    const pdpRuleSets = await dataSource.getRepository(PdpRuleSet).find({
+      where: { status: "PUBLISHED", deleted_at: IsNull() },
+    });
+    const pdpLibraryItems = await dataSource
+      .getRepository(PdpLibraryItem)
+      .find({
+        where: {
+          rule_set_id: In(pdpRuleSets.map((item) => item.id)),
+          deleted_at: IsNull(),
+        },
+      });
+    return { pdps, pdpObjectives, pdpRuleSets, pdpLibraryItems };
+  };
+
+  static getDocumentationsToSync = async (sessions: Session[]) => {
+    const repository = await dataSource.getRepository(Documentation);
     return await repository.find({
       where: { session_id: In(sessions.map((item) => item.id)) },
     });

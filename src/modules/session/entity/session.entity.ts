@@ -10,6 +10,7 @@ import { School } from "../../school/entity/school.entity";
 import { Teacher } from "../../teacher/entity/teacher.entity";
 import { Answer } from "../../answer/entity/answer.entity";
 import { Coach } from "../../coach/entity/coach.entity";
+import { SessionActivity } from "./session-activity.entity";
 import { Feedback } from "./feedback.entity";
 
 @Entity()
@@ -21,8 +22,51 @@ export class Session {
   @PrimaryGeneratedColumn("uuid")
   id?: string;
 
+  // PREPARATION, OBSERVATION, EVALUATION or COMPLETED (empty for older sessions, considered closed)
   @Column({ nullable: true })
   session_status?: string;
+
+  // Header of the paper tool
+  // Level: always S (secondary) with the DRC grid
+  @Column({ nullable: true })
+  level?: string;
+
+  @Column({ nullable: true })
+  school_year?: string;
+
+  @Column({ nullable: true })
+  teacher_weekly_load?: number;
+
+  @Column({ nullable: true })
+  last_observation_date?: Date;
+
+  @Column({ nullable: true })
+  last_observation_rating?: string;
+
+  @Column({ nullable: true })
+  observer_function?: string;
+
+  @Column({ nullable: true })
+  start_time?: string;
+
+  @Column({ nullable: true })
+  end_time?: string;
+
+  @Column({ nullable: true, type: "text" })
+  advice?: string;
+
+  @Column({ nullable: true })
+  signed_place?: string;
+
+  // Time of each change of step
+  @Column({ nullable: true })
+  observation_started_at?: Date;
+
+  @Column({ nullable: true })
+  observation_ended_at?: Date;
+
+  @Column({ nullable: true })
+  completed_at?: Date;
 
   @Column({ nullable: true, type: "uuid" })
   feedback_id?: string;
@@ -78,6 +122,9 @@ export class Session {
 
   @OneToMany(() => Answer, (answer) => answer.session)
   answers?: Answer[];
+
+  @OneToMany(() => SessionActivity, (activity) => activity.session)
+  activities?: SessionActivity[];
 
   @Column({ nullable: true })
   created_at?: Date;

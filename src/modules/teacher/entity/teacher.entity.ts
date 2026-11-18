@@ -28,6 +28,14 @@ export class Teacher {
   @Column({ nullable: true })
   subject?: string;
 
+  // F or M
+  @Column({ nullable: true })
+  sex?: string;
+
+  // Weekly teaching load, in hours
+  @Column({ nullable: true })
+  weekly_load?: number;
+
   @Column({ nullable: true })
   school_id?: string;
 

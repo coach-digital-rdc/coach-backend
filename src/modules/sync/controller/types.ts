@@ -8,6 +8,16 @@ import { Teacher } from "../../teacher/entity/teacher.entity";
 import { Feedback } from "../../session/entity/feedback.entity";
 import { Coach } from "../../coach/entity/coach.entity";
 import { CoachSchool } from "../../coach/entity/coach-school.entity";
+import { SessionActivity } from "../../session/entity/session-activity.entity";
+import { ObservationNote } from "../../session/entity/observation-note.entity";
+import { CompetenceScore } from "../../session/entity/competence-score.entity";
+import { SessionSignature } from "../../session/entity/session-signature.entity";
+import { Pdp } from "../../pdp/entity/pdp.entity";
+import { PdpObjective } from "../../pdp/entity/pdp-objective.entity";
+import { PdpRuleSet } from "../../pdp/entity/pdp-rule-set.entity";
+import { PdpLibraryItem } from "../../pdp/entity/pdp-library-item.entity";
+import { Documentation } from "../../session/entity/documentation.entity";
+import { ChecklistItem } from "../../session/entity/checklist-item.entity";
 
 export type DataChanges = {
   images?: Image[];
@@ -17,6 +27,13 @@ export type DataChanges = {
   sessions?: Session[];
   answers?: Answer[];
   feedbacks?: Feedback[];
+  sessionActivities?: SessionActivity[];
+  documentations?: Documentation[];
+  observationNotes?: ObservationNote[];
+  competenceScores?: CompetenceScore[];
+  pdps?: Pdp[];
+  sessionSignatures?: SessionSignature[];
+  pdpObjectives?: PdpObjective[];
 };
 
 export type DataToSync = {
@@ -38,5 +55,15 @@ export type SyncData = {
   teachers: Teacher[];
   feedbacks: Feedback[];
   answers: Answer[];
+  sessionActivities: SessionActivity[];
+  documentations: Documentation[];
+  observationNotes: ObservationNote[];
+  competenceScores: CompetenceScore[];
+  pdps: Pdp[];
+  sessionSignatures: SessionSignature[];
+  pdpObjectives: PdpObjective[];
+  pdpRuleSets: PdpRuleSet[];
+  pdpLibraryItems: PdpLibraryItem[];
+  checklistItems: ChecklistItem[];
   total: number;
 };
