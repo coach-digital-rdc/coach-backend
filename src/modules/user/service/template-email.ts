@@ -23,3 +23,16 @@ If you didn't request an account, please disregard this email or contact us for 
 Thank you,
 The #{appName} Team
 `;
+
+export const WELCOME_ADMIN_CD = `
+Bonjour #{userName},
+
+Bienvenue sur #{appName} ! Votre compte est créé et prêt à être utilisé.
+
+Pour y accéder, connectez-vous avec votre adresse électronique (#{email}) à l'adresse suivante : #{url}.
+
+Si vous n'avez pas demandé de compte, ignorez ce courriel ou contactez-nous.
+
+Merci,
+L'équipe #{appName}
+`;

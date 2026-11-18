@@ -2,7 +2,17 @@ import { In } from "typeorm";
 import dataSource from "../../../database/config/ormconfig";
 import { User } from "../entity";
 import sgMail from "@sendgrid/mail";
-import { WELCOME_ADMIN_NP, WELCOME_ADMIN_SL } from "./template-email";
+import {
+  WELCOME_ADMIN_CD,
+  WELCOME_ADMIN_NP,
+  WELCOME_ADMIN_SL,
+} from "./template-email";
+
+const WELCOME_ADMIN: Record<string, { subject: string; text: string }> = {
+  cd: { subject: "bienvenue", text: WELCOME_ADMIN_CD },
+  np: { subject: "एक-पटकको पासकोड", text: WELCOME_ADMIN_NP },
+  sl: { subject: "one-time passcode", text: WELCOME_ADMIN_SL },
+};
 
 export class UserService {
   static findUserByID = async (id: string): Promise<User | null> => {
@@ -80,23 +90,21 @@ export class UserService {
     try {
       sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
 
+      const template =
+        WELCOME_ADMIN[process.env.COUNTRY || ""] || WELCOME_ADMIN.sl;
       const msg = {
         to: user.email,
-        from: "noreply@quanti.ca",
-        subject: `${process.env.APP_NAME} - ${
-          process.env.COUNTRY === "np" ? "एक-पटकको पासकोड" : "one-time passcode"
-        }`,
-        text: (process.env.COUNTRY === "np"
-          ? WELCOME_ADMIN_NP
-          : WELCOME_ADMIN_SL
-        )
+        from: process.env.MAIL_FROM || "noreply@quanti.ca",
+        subject: `${process.env.APP_NAME} - ${template.subject}`,
+        text: template.text
           .replace("#{userName}", user?.name || "")
           .replace("#{appName}", process.env.APP_NAME || "Coach Digital")
           .replace("#{appName}", process.env.APP_NAME || "Coach Digital")
           .replace("#{email}", user?.email || "")
           .replace(
             "#{url}",
-            `https://coachdigital.org/${process.env.COUNTRY}/admin/`
+            process.env.ADMIN_URL ||
+              `https://coachdigital.org/${process.env.COUNTRY}/admin/`
           ),
       };
 

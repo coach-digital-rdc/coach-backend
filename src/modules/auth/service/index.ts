@@ -7,7 +7,13 @@ import { User } from "../../user/entity/user.entity";
 import dataSource from "../../../database/config/ormconfig";
 import { LogsService } from "../../logs/service";
 import sgMail from "@sendgrid/mail";
-import { OTP_EMAIL_NP, OTP_EMAIL_SL } from "./template-email";
+import { OTP_EMAIL_CD, OTP_EMAIL_NP, OTP_EMAIL_SL } from "./template-email";
+
+const OTP_EMAIL: Record<string, { subject: string; text: string }> = {
+  cd: { subject: "code à usage unique", text: OTP_EMAIL_CD },
+  np: { subject: "एक-पटकको पासकोड", text: OTP_EMAIL_NP },
+  sl: { subject: "one-time passcode", text: OTP_EMAIL_SL },
+};
 import { Otp } from "../entity/otp.entity";
 import { MoreThan } from "typeorm";
 import { UserService } from "../../user/service";
@@ -116,13 +122,12 @@ export default class Authentication {
 
     const code = this.generateOTPCode(size);
 
+    const template = OTP_EMAIL[process.env.COUNTRY || ""] || OTP_EMAIL.sl;
     const msg = {
       to: email,
-      from: "noreply@quanti.ca",
-      subject: `${process.env.APP_NAME} - ${
-        process.env.COUNTRY === "np" ? "एक-पटकको पासकोड" : "one-time passcode"
-      }`,
-      text: (process.env.COUNTRY === "np" ? OTP_EMAIL_NP : OTP_EMAIL_SL)
+      from: process.env.MAIL_FROM || "noreply@quanti.ca",
+      subject: `${process.env.APP_NAME} - ${template.subject}`,
+      text: template.text
         .replace("#{code}", code)
         .replace("#{userName}", userName)
         .replace("#{appName}", process.env.APP_NAME || "Coach Digital")
