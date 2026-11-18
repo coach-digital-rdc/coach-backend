@@ -14,6 +14,7 @@ import { CoachSchool } from "../../coach/entity/coach-school.entity";
 import { CompetenceService } from "../../competencies/service";
 import { QuestionService } from "../../question/service";
 import { SessionActivity } from "../../session/entity/session-activity.entity";
+import { ObservationNote } from "../../session/entity/observation-note.entity";
 import { Documentation } from "../../session/entity/documentation.entity";
 import { ChecklistItem } from "../../session/entity/checklist-item.entity";
 
@@ -48,6 +49,10 @@ export class SyncService {
         changes.sessionActivities || []
       );
       await this.saveSyncByEntity(Documentation, changes.documentations || []);
+      await this.saveSyncByEntity(
+        ObservationNote,
+        changes.observationNotes || []
+      );
       await this.saveSyncByEntity(Feedback, changes.feedbacks || []);
 
       const { coaches, coachSchools } = await this.getCoachDataToSync(school);
@@ -56,6 +61,9 @@ export class SyncService {
       const answers = await this.getAnswerToSync(sessions);
       const sessionActivities = await this.getSessionActivitiesToSync(sessions);
       const documentations = await this.getDocumentationsToSync(sessions);
+      const observationNotes = await dataSource
+        .getRepository(ObservationNote)
+        .find({ where: { session_id: In(sessions.map((item) => item.id)) } });
       const checklistItems = await dataSource
         .getRepository(ChecklistItem)
         .find({ where: { deleted_at: IsNull() }, order: { display_order: "ASC" } });
@@ -75,6 +83,7 @@ export class SyncService {
         answers,
         sessionActivities,
         documentations,
+        observationNotes,
         checklistItems,
         total:
           coaches.length +
