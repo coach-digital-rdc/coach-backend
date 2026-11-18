@@ -51,7 +51,8 @@ export class SyncService {
       await this.saveSyncByEntity(Documentation, changes.documentations || []);
       await this.saveSyncByEntity(
         ObservationNote,
-        changes.observationNotes || []
+        changes.observationNotes || [],
+        true
       );
       await this.saveSyncByEntity(Feedback, changes.feedbacks || []);
 
@@ -97,9 +98,11 @@ export class SyncService {
     }
   };
 
+  // keepDeletion: the deletion made on the device is kept (e.g. a deleted note)
   static saveSyncByEntity = async (
     Entity: EntityTarget<ObjectLiteral>,
-    changes: any[]
+    changes: any[],
+    keepDeletion = false
   ) => {
     const repository = await dataSource.getRepository(Entity);
 
@@ -109,7 +112,7 @@ export class SyncService {
           ...item,
           created_at: new Date(item.created_at).toJSON(),
           updated_at: undefined,
-          deleted_at: undefined,
+          deleted_at: keepDeletion ? item.deleted_at || null : undefined,
         })
       )
     );
