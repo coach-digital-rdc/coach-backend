@@ -1,13 +1,14 @@
-import config from "./config";
 
 const packageJson: any = require("../package.json");
 
 export default {
   openapi: "3.0.1",
   info: {
-    title: `REST API for Coach digital ${config.country?.toUpperCase()}`,
+    title: "REST API for Coach Digital RDC",
     version: packageJson?.version,
   },
+  // Every route is served under /api
+  servers: [{ url: "/api" }],
   paths: {
     "/auth": {
       post: {

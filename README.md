@@ -1,4 +1,6 @@
-# Coache digital SL API
+# Coach Digital RDC — API
+
+Server of Coach Digital for the classroom observation tool of the DRC (PAAF / SERNAFOR), derived from [WBG-Coach](https://github.com/WBG-Coach). The multi-country version (Sierra Leone, Nepal) is kept under the git tag `avant-version-rdc`.
 
 
 ## Setup dev
@@ -13,14 +15,14 @@
   - Run `npm run migration:run` to create the tables
   - Run `npm run start:dev`
   - Optional: run `npm run seed:fr` to load the French demo data (regions, schools, coaches, teachers, competences, questions and sessions; all fictitious). Admin login: `admin.test@example.com`, coach login: `coach.demo@example.com`
-  - DRC: run `npm run seed:grille-rdc` to load the observation grid of annex B (6 sub-domains, 30 behaviours, help texts from the user manual, file `src/database/seeds/grille-rdc.json`). Add `-- --replace` to mark the sub-domains and behaviours missing from the file as deleted (for instance those of the demo data)
-  - DRC: run `npm run seed:territoires-rdc` to load the education hierarchy (26 provinces, 60 PROVED, 635 sous-PROVED, file `src/database/seeds/territoires-rdc.csv`). Schools are then imported from the admin (Schools > Import data) with a CSV file `numero_secope,nom,province,proved,sous_proved`; the SECOPE number is optional. Example with fictitious schools: `src/database/seeds/ecoles-exemple-rdc.csv`
-  - API: `http://localhost:3000/{COUNTRY}/api/`
-  - Swagger: `http://localhost:3000/{COUNTRY}/api/docs`
+  - Run `npm run seed:grille-rdc` to load the observation grid of annex B (6 sub-domains, 30 behaviours, help texts from the user manual, file `src/database/seeds/grille-rdc.json`). Add `-- --replace` to mark the sub-domains and behaviours missing from the file as deleted (for instance those of the demo data)
+  - Run `npm run seed:territoires-rdc` to load the education hierarchy (26 provinces, 60 PROVED, 635 sous-PROVED, file `src/database/seeds/territoires-rdc.csv`). Schools are then imported from the admin (Schools > Import data) with a CSV file `numero_secope,nom,province,proved,sous_proved`; the SECOPE number is optional. Example with fictitious schools: `src/database/seeds/ecoles-exemple-rdc.csv`
+  - API: `http://localhost:3000/api/`
+  - Swagger: `http://localhost:3000/api/docs`
 
 ## Setup prod with docker
 
   - Copy .env.example to .env
-  - Run `npm run build-docker` or `docker build -t coach-backend-sl .`
+  - Run `npm run build-docker` or `docker build -t coach-backend .`
   - Run `docker-compose up -d`
-  - Open `http://localhost:3000/{COUNTRY}/api/docs`
+  - Open `http://localhost:3000/api/docs`

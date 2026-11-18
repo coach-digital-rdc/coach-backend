@@ -15,7 +15,6 @@ import coachRouter from "./modules/coach/routes";
 import imageRouter from "./modules/image/routes";
 import logRouter from "./modules/logs/routes";
 import dashboardRouter from "./modules/dashboard/routes";
-import config from "./config";
 
 const packageJson: any = require("../package.json");
 
@@ -36,14 +35,14 @@ const Routes = {
     competenceRouter(app);
     logRouter(app);
 
-    app.get(`/${config.country}/api/`, (_req: Request, res: Response) => {
+    app.get(`/api/`, (_req: Request, res: Response) => {
       res.send(
-        `Coach API ${config.country} v${packageJson?.version} is running.`
+        `Coach Digital RDC API v${packageJson?.version} is running.`
       );
     });
 
     app.use(
-      `/${config.country}/api/docs`,
+      `/api/docs`,
       swaggerUi.serve,
       swaggerUi.setup(swaggerOptions)
     );
