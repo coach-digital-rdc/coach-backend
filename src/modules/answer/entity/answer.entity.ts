@@ -19,8 +19,20 @@ export class Answer {
   @PrimaryGeneratedColumn("uuid")
   id?: string;
 
+  // YES_NO: 0 = Non, 1 = Oui; FME: 1 = Faible, 2 = Moyen, 3 = Élevé; empty when not_applicable
   @Column({ nullable: true })
   value?: number;
+
+  // The observer chose "N/A". The mobile app sends SQLite booleans (0 or 1).
+  @Column({
+    default: false,
+    transformer: {
+      to: (value?: boolean | number | string) =>
+        value === undefined ? undefined : value === true || Number(value) === 1,
+      from: (value: boolean) => value,
+    },
+  })
+  not_applicable?: boolean;
 
   @Column({ nullable: true })
   question_id?: string;
