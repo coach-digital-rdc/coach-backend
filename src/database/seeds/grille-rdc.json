@@ -1,5 +1,5 @@
 {
-  "source": "Annexe B (libellés) et annexe C (descriptions F/M/E) des TDR, outil papier RDC",
+  "source": "Annexe B (libellés de la grille et des 15 documents de la checklist) et annexe C (descriptions F/M/E) des TDR, outil papier RDC",
   "competences": [
     {
       "id": "2346916b-e327-54c1-b29a-4277f7cf2f22",
@@ -386,6 +386,128 @@
       "allow_na": false,
       "display_order": 6,
       "tooltip_data": "{\"title\": \"4.6 Les apprenant.e.s collaborent grâce aux interactions entre pairs.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"Les apprenants ne collaborent pas OU lorsqu'ils interagissent les uns avec les autres, ils ont des comportements négatifs.\\nPar exemple :\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"Les apprenants collaborent de manière superficielle ;\\nil peut aussi y avoir des cas minimes où les apprenants affichent des comportements négatifs (taquineries, bousculades ; intimidations, etc.) ; cependant, ces comportements sont isolés, mineurs et/ou juste pour jouer (exemple donné : aucun enfant n'est contrarié) et ne caractérisent pas globalement la salle de classe.\\nPar exemple : Les apprenants partagent le matériel entre eux au sein d'un groupe, mais ils réalisent l'activité de manière individuelle et ne collaborent pas les uns avec les autres sur les problèmes posés.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"Les apprenants collaborent les uns avec les autres en travaillant ensemble pour réaliser un produit, résoudre un problème, remplir une feuille de travail ou présenter une nouvelle idée. Il n'y a aucun comportement négatif.\\nPar exemple : les apprenants travaillent en groupe pour effectuer une tâche nécessitant une collaboration, par ex. créer un diagramme du cycle de l'eau ou proposer des sketches pour illustrer un ensemble de mots de vocabulaire. Ils peuvent aussi s'entraider pour résoudre un problème de mathématiques.\"}]}"
+    }
+  ],
+  "checklist": [
+    {
+      "id": "79ab9121-36a3-5c8a-a25b-f7543d4ed412",
+      "code": 1,
+      "owner": "TEACHER",
+      "document_name": "Prévisions des matières / Chronogramme",
+      "statement": "L'enseignant.e planifie les matières à enseigner conformément aux programmes éducatifs et fait des mises à jour périodiques.",
+      "display_order": 1
+    },
+    {
+      "id": "59b1a344-d44e-5360-9308-eab29794bd40",
+      "code": 2,
+      "owner": "TEACHER",
+      "document_name": "Journal de classe",
+      "statement": "L'enseignant.e tient quotidiennement son journal de classe avec clarté.",
+      "display_order": 2
+    },
+    {
+      "id": "ed305548-882a-5a01-98c4-d9d89cb92e75",
+      "code": 3,
+      "owner": "TEACHER",
+      "document_name": "Cahier (fiche) de préparation",
+      "statement": "L'enseignant.e prépare ses séquences didactiques en les adaptant au niveau et au milieu des apprenant.e.s.",
+      "display_order": 3
+    },
+    {
+      "id": "b0c411a9-4d6c-5cf6-9c3b-293dd47e021d",
+      "code": 4,
+      "owner": "TEACHER",
+      "document_name": "Fichier",
+      "statement": "L'enseignant.e fait l'archivage de ses fiches (cahier de préparation) en les ordonnant.",
+      "display_order": 4
+    },
+    {
+      "id": "d0172991-ae09-5b5c-92dc-e855f9fa3b64",
+      "code": 5,
+      "owner": "TEACHER",
+      "document_name": "Cahier de cotation",
+      "statement": "L'enseignant.e compose des questions claires, précises, concises et prévoit le corrigé et la pondération.",
+      "display_order": 5
+    },
+    {
+      "id": "b1ab390c-0460-5375-b630-40426d21fb05",
+      "code": 6,
+      "owner": "TEACHER",
+      "document_name": "Cahier des questions / des situations-problèmes",
+      "statement": "L'enseignant.e note régulièrement les points obtenus en indiquant la nature des différents travaux et évite toute rature et surcharge.",
+      "display_order": 6
+    },
+    {
+      "id": "4e42e1c6-067b-572c-8880-552cee6ec2db",
+      "code": 7,
+      "owner": "TEACHER",
+      "document_name": "Manuels scolaires",
+      "statement": "L'enseignant.e possède les manuels de base et en fait usage pour l'apprentissage des apprenant.e.s.",
+      "display_order": 7
+    },
+    {
+      "id": "f2632505-7599-52e6-b689-8c5e15932511",
+      "code": 8,
+      "owner": "TEACHER",
+      "document_name": "Ressources pédagogiques et numériques",
+      "statement": "L'enseignant.e utilise une documentation variée (Internet, IA, …) pour garantir l'amélioration des apprentissages.",
+      "display_order": 8
+    },
+    {
+      "id": "07793e50-a631-52d3-b8ee-b4ad53ecf19d",
+      "code": 9,
+      "owner": "TEACHER",
+      "document_name": "Registre d'appel",
+      "statement": "L'enseignant.e contrôle régulièrement le registre d'appel et calcule la moyenne de fréquentation mensuelle, s'il est titulaire de la classe.",
+      "display_order": 9
+    },
+    {
+      "id": "0766d8b9-f091-5c99-b2f5-889177561a64",
+      "code": 10,
+      "owner": "LEARNER",
+      "document_name": "Journal de classe de l'apprenant.e",
+      "statement": "Les apprenant.e.s remplissent quotidiennement et soigneusement leurs journaux de classe et les font contrôler par l'enseignant.e.",
+      "display_order": 10
+    },
+    {
+      "id": "dc55bf34-0162-5f8b-88e2-660eaeecaad6",
+      "code": 11,
+      "owner": "LEARNER",
+      "document_name": "Cahier de cours",
+      "statement": "Les apprenant.e.s possèdent les cahiers de cours pour les résumés, les remplissent proprement et l'enseignant.e les contrôle.",
+      "display_order": 11
+    },
+    {
+      "id": "89c5d59c-1169-5132-bd43-6dd04cb18560",
+      "code": 12,
+      "owner": "LEARNER",
+      "document_name": "Cahier d'exercices de l'apprenant.e",
+      "statement": "Les apprenant.e.s possèdent des cahiers de brouillon, d'exercices ou des ardoises pour les travaux individuels ou de groupe.",
+      "display_order": 12
+    },
+    {
+      "id": "c203a72b-ce33-5573-bafb-93357dc9c2c7",
+      "code": 13,
+      "owner": "LEARNER",
+      "document_name": "Manuels de l'élève",
+      "statement": "Les apprenant.e.s utilisent les manuels de base pendant la séquence didactique.",
+      "display_order": 13
+    },
+    {
+      "id": "24b36da7-0f95-5bf4-af38-34084fd3b4e2",
+      "code": 14,
+      "owner": "LEARNER",
+      "document_name": "Cahier de devoirs et interrogations",
+      "statement": "Les apprenant.e.s font les devoirs, interrogations, travaux à domicile et travaux pratiques dans un cahier suivi par l'enseignant.e et les parents.",
+      "display_order": 14
+    },
+    {
+      "id": "449f92ca-b085-58bf-a676-73826cc2f11e",
+      "code": 15,
+      "owner": "LEARNER",
+      "document_name": "Cahier de communication",
+      "statement": "Les apprenant.e.s utilisent le cahier de communication pour favoriser le contact entre l'école et les parents.",
+      "display_order": 15
     }
   ]
 }

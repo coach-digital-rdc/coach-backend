@@ -8,6 +8,7 @@ import { In, IsNull, Not } from "typeorm";
 import dataSource from "../config/ormconfig";
 import { Competence } from "../../modules/competencies/entity/competence.entity";
 import { Question } from "../../modules/question/entity/question.entity";
+import { ChecklistItem } from "../../modules/session/entity/checklist-item.entity";
 
 const [fileName, option] = process.argv.slice(2);
 
@@ -18,7 +19,11 @@ if (!fileName) {
   process.exit(1);
 }
 
-const grid: { competences: Competence[]; questions: Question[] } = JSON.parse(
+const grid: {
+  competences: Competence[];
+  questions: Question[];
+  checklist?: ChecklistItem[];
+} = JSON.parse(
   fs.readFileSync(path.join(__dirname, fileName), "utf8"),
 );
 
@@ -44,6 +49,16 @@ dataSource
         })),
       );
 
+      // Documents of the checklist (B12), when the file has them
+      await manager.save(
+        ChecklistItem,
+        (grid.checklist || []).map((item) => ({
+          ...item,
+          updated_at: now,
+          deleted_at: null as any,
+        })),
+      );
+
       if (option === "--replace") {
         await manager.update(
           Question,
@@ -64,7 +79,7 @@ dataSource
       }
     });
     console.log(
-      `Grid ${fileName} loaded: ${grid.competences.length} sub-domains, ${grid.questions.length} behaviours.`,
+      `Grid ${fileName} loaded: ${grid.competences.length} sub-domains, ${grid.questions.length} behaviours, ${grid.checklist?.length || 0} checklist documents.`,
     );
     await dataSource.destroy();
   })

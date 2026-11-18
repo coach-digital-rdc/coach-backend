@@ -1,4 +1,4 @@
-import { EntityTarget, In, MoreThan, ObjectLiteral } from "typeorm";
+import { EntityTarget, In, IsNull, MoreThan, ObjectLiteral } from "typeorm";
 import { Feedback } from "../../session/entity/feedback.entity";
 import { Teacher } from "../../teacher/entity/teacher.entity";
 import { Session } from "../../session/entity/session.entity";
@@ -14,6 +14,8 @@ import { CoachSchool } from "../../coach/entity/coach-school.entity";
 import { CompetenceService } from "../../competencies/service";
 import { QuestionService } from "../../question/service";
 import { SessionActivity } from "../../session/entity/session-activity.entity";
+import { Documentation } from "../../session/entity/documentation.entity";
+import { ChecklistItem } from "../../session/entity/checklist-item.entity";
 
 export class SyncService {
   static findAll = async (): Promise<Teacher[]> => {
@@ -45,6 +47,7 @@ export class SyncService {
         SessionActivity,
         changes.sessionActivities || []
       );
+      await this.saveSyncByEntity(Documentation, changes.documentations || []);
       await this.saveSyncByEntity(Feedback, changes.feedbacks || []);
 
       const { coaches, coachSchools } = await this.getCoachDataToSync(school);
@@ -52,6 +55,10 @@ export class SyncService {
       const sessions = await this.getDataToSync(Session, lastSync, school);
       const answers = await this.getAnswerToSync(sessions);
       const sessionActivities = await this.getSessionActivitiesToSync(sessions);
+      const documentations = await this.getDocumentationsToSync(sessions);
+      const checklistItems = await dataSource
+        .getRepository(ChecklistItem)
+        .find({ where: { deleted_at: IsNull() }, order: { display_order: "ASC" } });
       const feedbacks = await this.getFeedbackToSync(school, lastSync);
       const competencies = await CompetenceService.findAll();
       const questions = await QuestionService.findAll();
@@ -67,6 +74,8 @@ export class SyncService {
         teachers,
         answers,
         sessionActivities,
+        documentations,
+        checklistItems,
         total:
           coaches.length +
           feedbacks.length +
@@ -106,6 +115,13 @@ export class SyncService {
 
   static getSessionActivitiesToSync = async (sessions: Session[]) => {
     const repository = await dataSource.getRepository(SessionActivity);
+    return await repository.find({
+      where: { session_id: In(sessions.map((item) => item.id)) },
+    });
+  };
+
+  static getDocumentationsToSync = async (sessions: Session[]) => {
+    const repository = await dataSource.getRepository(Documentation);
     return await repository.find({
       where: { session_id: In(sessions.map((item) => item.id)) },
     });

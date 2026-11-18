@@ -9,6 +9,8 @@ import { Feedback } from "../../session/entity/feedback.entity";
 import { Coach } from "../../coach/entity/coach.entity";
 import { CoachSchool } from "../../coach/entity/coach-school.entity";
 import { SessionActivity } from "../../session/entity/session-activity.entity";
+import { Documentation } from "../../session/entity/documentation.entity";
+import { ChecklistItem } from "../../session/entity/checklist-item.entity";
 
 export type DataChanges = {
   images?: Image[];
@@ -19,6 +21,7 @@ export type DataChanges = {
   answers?: Answer[];
   feedbacks?: Feedback[];
   sessionActivities?: SessionActivity[];
+  documentations?: Documentation[];
 };
 
 export type DataToSync = {
@@ -41,5 +44,7 @@ export type SyncData = {
   feedbacks: Feedback[];
   answers: Answer[];
   sessionActivities: SessionActivity[];
+  documentations: Documentation[];
+  checklistItems: ChecklistItem[];
   total: number;
 };
