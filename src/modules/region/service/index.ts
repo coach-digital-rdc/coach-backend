@@ -73,7 +73,10 @@ export class RegionService {
       if (root) {
         return this.findOrCreateLeafRegionByNamePath(children, root);
       } else {
-        const newRegion = await regionRepository.save({ name: currentRegion });
+        const newRegion = await regionRepository.save({
+          name: currentRegion,
+          level: 0,
+        });
         if (children.length > 0)
           return this.findOrCreateLeafRegionByNamePath(children, newRegion);
 
@@ -90,6 +93,7 @@ export class RegionService {
         const newRegion = await regionRepository.save({
           name: currentRegion,
           parent: { id: father.id },
+          level: (father.level ?? 0) + 1,
         });
         if (children.length > 0)
           return this.findOrCreateLeafRegionByNamePath(children, newRegion);

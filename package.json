@@ -14,7 +14,8 @@
     "migration:run": "npm run typeorm -- migration:run",
     "migration:revert": "npm run typeorm -- migration:revert",
     "seed:fr": "ts-node ./src/database/seeds/run-seed.ts demo_fr.sql",
-    "seed:grille-rdc": "ts-node ./src/database/seeds/load-grille.ts grille-rdc.json"
+    "seed:grille-rdc": "ts-node ./src/database/seeds/load-grille.ts grille-rdc.json",
+    "seed:territoires-rdc": "ts-node ./src/database/seeds/load-territoires.ts territoires-rdc.csv"
   },
   "repository": {
     "type": "git",
