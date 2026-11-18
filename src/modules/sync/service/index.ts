@@ -16,6 +16,7 @@ import { QuestionService } from "../../question/service";
 import { SessionActivity } from "../../session/entity/session-activity.entity";
 import { ObservationNote } from "../../session/entity/observation-note.entity";
 import { CompetenceScore } from "../../session/entity/competence-score.entity";
+import { SessionSignature } from "../../session/entity/session-signature.entity";
 import { Pdp } from "../../pdp/entity/pdp.entity";
 import { PdpObjective } from "../../pdp/entity/pdp-objective.entity";
 import { PdpRuleSet } from "../../pdp/entity/pdp-rule-set.entity";
@@ -65,6 +66,10 @@ export class SyncService {
       );
       await this.saveSyncByEntity(Pdp, changes.pdps || []);
       await this.saveSyncByEntity(
+        SessionSignature,
+        changes.sessionSignatures || []
+      );
+      await this.saveSyncByEntity(
         PdpObjective,
         changes.pdpObjectives || [],
         true
@@ -79,6 +84,9 @@ export class SyncService {
       const documentations = await this.getDocumentationsToSync(sessions);
       const { pdps, pdpObjectives, pdpRuleSets, pdpLibraryItems } =
         await this.getPdpToSync(sessions);
+      const sessionSignatures = await dataSource
+        .getRepository(SessionSignature)
+        .find({ where: { session_id: In(sessions.map((item) => item.id)) } });
       const competenceScores = await dataSource
         .getRepository(CompetenceScore)
         .find({ where: { session_id: In(sessions.map((item) => item.id)) } });
@@ -107,6 +115,7 @@ export class SyncService {
         observationNotes,
         competenceScores,
         pdps,
+        sessionSignatures,
         pdpObjectives,
         pdpRuleSets,
         pdpLibraryItems,

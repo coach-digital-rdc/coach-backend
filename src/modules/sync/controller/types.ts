@@ -11,6 +11,7 @@ import { CoachSchool } from "../../coach/entity/coach-school.entity";
 import { SessionActivity } from "../../session/entity/session-activity.entity";
 import { ObservationNote } from "../../session/entity/observation-note.entity";
 import { CompetenceScore } from "../../session/entity/competence-score.entity";
+import { SessionSignature } from "../../session/entity/session-signature.entity";
 import { Pdp } from "../../pdp/entity/pdp.entity";
 import { PdpObjective } from "../../pdp/entity/pdp-objective.entity";
 import { PdpRuleSet } from "../../pdp/entity/pdp-rule-set.entity";
@@ -31,6 +32,7 @@ export type DataChanges = {
   observationNotes?: ObservationNote[];
   competenceScores?: CompetenceScore[];
   pdps?: Pdp[];
+  sessionSignatures?: SessionSignature[];
   pdpObjectives?: PdpObjective[];
 };
 
@@ -58,6 +60,7 @@ export type SyncData = {
   observationNotes: ObservationNote[];
   competenceScores: CompetenceScore[];
   pdps: Pdp[];
+  sessionSignatures: SessionSignature[];
   pdpObjectives: PdpObjective[];
   pdpRuleSets: PdpRuleSet[];
   pdpLibraryItems: PdpLibraryItem[];
