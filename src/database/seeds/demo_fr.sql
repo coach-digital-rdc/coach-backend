@@ -5,10 +5,11 @@
 
 BEGIN;
 
--- region
-INSERT INTO region (id, name, updated_at, deleted_at, "parentId", level, mpath) VALUES ('f0000001-0000-4000-8000-000000000001', 'République démocratique du Congo', '2026-10-11 18:56:27.016995', NULL, NULL, 0, 'f0000001-0000-4000-8000-000000000001.') ON CONFLICT DO NOTHING;
-INSERT INTO region (id, name, updated_at, deleted_at, "parentId", level, mpath) VALUES ('f0000001-0000-4000-8000-000000000002', 'Kinshasa', '2026-10-11 18:56:27.016995', NULL, 'f0000001-0000-4000-8000-000000000001', 1, 'f0000001-0000-4000-8000-000000000001.f0000001-0000-4000-8000-000000000002.') ON CONFLICT DO NOTHING;
-INSERT INTO region (id, name, updated_at, deleted_at, "parentId", level, mpath) VALUES ('f0000001-0000-4000-8000-000000000003', 'Gombe', '2026-10-11 18:56:27.016995', NULL, 'f0000001-0000-4000-8000-000000000002', 2, 'f0000001-0000-4000-8000-000000000001.f0000001-0000-4000-8000-000000000002.f0000001-0000-4000-8000-000000000003.') ON CONFLICT DO NOTHING;
+-- region: DRC education hierarchy (province > PROVED > sous-PROVED). Load this file before
+-- npm run seed:territoires-rdc, which then completes the hierarchy around these regions.
+INSERT INTO region (id, name, updated_at, deleted_at, "parentId", level, mpath) VALUES ('f0000001-0000-4000-8000-000000000001', 'Kinshasa', '2026-10-11 18:56:27.016995', NULL, NULL, 0, 'f0000001-0000-4000-8000-000000000001.') ON CONFLICT DO NOTHING;
+INSERT INTO region (id, name, updated_at, deleted_at, "parentId", level, mpath) VALUES ('f0000001-0000-4000-8000-000000000002', 'Kinshasa Lukunga (GOMBE)', '2026-10-11 18:56:27.016995', NULL, 'f0000001-0000-4000-8000-000000000001', 1, 'f0000001-0000-4000-8000-000000000001.f0000001-0000-4000-8000-000000000002.') ON CONFLICT DO NOTHING;
+INSERT INTO region (id, name, updated_at, deleted_at, "parentId", level, mpath) VALUES ('f0000001-0000-4000-8000-000000000003', 'GOMBE', '2026-10-11 18:56:27.016995', NULL, 'f0000001-0000-4000-8000-000000000002', 2, 'f0000001-0000-4000-8000-000000000001.f0000001-0000-4000-8000-000000000002.f0000001-0000-4000-8000-000000000003.') ON CONFLICT DO NOTHING;
 
 -- school
 INSERT INTO school (id, name, created_at, updated_at, deleted_at, emis_number, region_id) VALUES ('b0000001-0000-4000-8000-000000000001', 'École primaire Les Manguiers', '2026-10-11 18:56:27.016995', NULL, NULL, 'EMIS-001', 'f0000001-0000-4000-8000-000000000003') ON CONFLICT DO NOTHING;
@@ -29,7 +30,7 @@ INSERT INTO teacher (id, name, surname, subject, image_id, created_at, updated_a
 INSERT INTO teacher (id, name, surname, subject, image_id, created_at, updated_at, deleted_at, emis_number, birthdate, pin, nin, school_id) VALUES ('d0000003-0000-4000-8000-000000000003', 'Grace', 'Mbuyi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'b0000002-0000-4000-8000-000000000002') ON CONFLICT DO NOTHING;
 
 -- user
-INSERT INTO "user" (id, name, email, created_at, updated_at, deleted_at, role, region_id, force_logout) VALUES ('a0000001-0000-4000-8000-000000000001', 'Admin Test', 'admin.test@example.com', '2026-10-11 18:56:27.016995', NULL, NULL, 'admin', 'f0000001-0000-4000-8000-000000000002', false) ON CONFLICT DO NOTHING;
+INSERT INTO "user" (id, name, email, created_at, updated_at, deleted_at, role, region_id, force_logout) VALUES ('a0000001-0000-4000-8000-000000000001', 'Admin Test', 'admin.test@example.com', '2026-10-11 18:56:27.016995', NULL, NULL, 'admin', 'f0000001-0000-4000-8000-000000000001', false) ON CONFLICT DO NOTHING;
 
 -- competence
 INSERT INTO competence (id, title, created_at, updated_at, deleted_at) VALUES ('4d15a3be-db2a-4fef-913a-6535bcd9d389', 'Temps consacré à l''apprentissage', NULL, NULL, NULL) ON CONFLICT DO NOTHING;

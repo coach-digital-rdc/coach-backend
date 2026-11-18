@@ -17,17 +17,27 @@ type SchoolBatchResponse = {
   failItems: string[][];
 };
 
+// The EMIS number (SECOPE number in the DRC) is optional and unique:
+// an empty value is stored as null so that several schools can have none.
+const emisOrNull = (emis_number?: string | null) =>
+  emis_number?.trim() ? emis_number.trim() : null;
+
 export class SchoolService {
   static create = async (data: School): Promise<School> => {
     const schoolRepository = await dataSource.getRepository(School);
 
-    return schoolRepository.save(data);
+    return schoolRepository.save({
+      ...data,
+      emis_number: emisOrNull(data.emis_number) as string,
+    });
   };
 
+  // Rows: EMIS (SECOPE) number, name, then the region path (in the DRC: province,
+  // PROVED, sous-PROVED). The admin sends the rows without the CSV header.
+  // A school already known by its EMIS number, or by its name in the same region, is updated.
   static createInBatch = async (batch: string[][]): Promise<any> => {
     const schoolRepository = await dataSource.getRepository(School);
-    const [header, ...data] = batch;
-    console.log(header);
+    const data = batch.filter((row) => row.some((cell) => cell?.trim()));
 
     const response = await data.reduce(
       async (
@@ -35,19 +45,31 @@ export class SchoolService {
         row: Array<string>
       ): Promise<SchoolBatchResponse> => {
         const oldState = await acc;
-        const [emis_number, name, ...regionPath] = row;
-
-        const region = await RegionService.findOrCreateLeafRegionByNamePath(
-          regionPath
+        const [emis, schoolName, ...regionPath] = row.map((cell) =>
+          (cell || "").trim()
         );
+        const emis_number = emisOrNull(emis);
+        const name = schoolName.replace(/\s+/g, " ");
+
+        const region = name
+          ? await RegionService.findOrCreateLeafRegionByNamePath(
+              regionPath.filter(Boolean)
+            )
+          : undefined;
 
         if (!region?.id) {
           return { ...oldState, failItems: [...oldState.failItems, row] };
         }
 
         try {
+          const existing = await schoolRepository.findOne({
+            where: emis_number
+              ? { emis_number }
+              : { name, region_id: region.id },
+          });
           await schoolRepository.save({
-            emis_number,
+            ...existing,
+            emis_number: (emis_number ?? existing?.emis_number) as string,
             name,
             region_id: region.id,
           });
@@ -72,7 +94,12 @@ export class SchoolService {
   ): Promise<School> => {
     const schoolRepository = await dataSource.getRepository(School);
 
-    return schoolRepository.save({ id, region_id, emis_number, name });
+    return schoolRepository.save({
+      id,
+      region_id,
+      emis_number: emisOrNull(emis_number) as string,
+      name,
+    });
   };
 
   static delete = async (id: string): Promise<DeleteResult> => {
