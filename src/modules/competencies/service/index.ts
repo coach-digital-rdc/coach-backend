@@ -1,4 +1,4 @@
-import { DeleteResult, UpdateResult } from "typeorm";
+import { DeleteResult, IsNull, UpdateResult } from "typeorm";
 import dataSource from "../../../database/config/ormconfig";
 import { Competence } from "../entity/competence.entity";
 
@@ -33,6 +33,10 @@ export class CompetenceService {
   static findAll = async (): Promise<Competence[]> => {
     const userRepository = await dataSource.getRepository(Competence);
 
-    return userRepository.find({ relations: ["questions"] });
+    return userRepository.find({
+      where: { deleted_at: IsNull() },
+      relations: ["questions"],
+      order: { display_order: "ASC", questions: { display_order: "ASC" } },
+    });
   };
 }

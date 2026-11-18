@@ -25,8 +25,20 @@ export class Question {
   @Column({ nullable: true })
   tooltip_data?: string;
 
+  // option (stars), YES_NO or FME (Faible/Moyen/Élevé)
   @Column({ nullable: true })
   type?: string;
+
+  // Behaviour number in the paper tool (1.1, 2.1.3...)
+  @Column({ nullable: true })
+  code?: string;
+
+  @Column({ nullable: true })
+  display_order?: number;
+
+  // The "N/A" answer is offered
+  @Column({ default: false })
+  allow_na?: boolean;
 
   @Column({ nullable: true })
   scale?: number;

@@ -13,6 +13,7 @@
   - Run `npm run migration:run` to create the tables
   - Run `npm run start:dev`
   - Optional: run `npm run seed:fr` to load the French demo data (regions, schools, coaches, teachers, competences, questions and sessions; all fictitious). Admin login: `admin.test@example.com`, coach login: `coach.demo@example.com`
+  - DRC: run `npm run seed:grille-rdc` to load the observation grid of annex B (6 sub-domains, 30 behaviours, help texts from the user manual, file `src/database/seeds/grille-rdc.json`). Add `-- --replace` to mark the sub-domains and behaviours missing from the file as deleted (for instance those of the demo data)
   - API: `http://localhost:3000/{COUNTRY}/api/`
   - Swagger: `http://localhost:3000/{COUNTRY}/api/docs`
 
