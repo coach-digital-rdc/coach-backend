@@ -13,7 +13,8 @@
     "migration:generate": "npm run typeorm -- migration:generate ./src/migrations/$migration_name",
     "migration:run": "npm run typeorm -- migration:run",
     "migration:revert": "npm run typeorm -- migration:revert",
-    "seed:fr": "ts-node ./src/database/seeds/run-seed.ts demo_fr.sql"
+    "seed:fr": "ts-node ./src/database/seeds/run-seed.ts demo_fr.sql",
+    "seed:grille-rdc": "ts-node ./src/database/seeds/load-grille.ts grille-rdc.json"
   },
   "repository": {
     "type": "git",

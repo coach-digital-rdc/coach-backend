@@ -1,0 +1,391 @@
+{
+  "source": "Annexe B (libellés) et annexe C (descriptions F/M/E) des TDR, outil papier RDC",
+  "competences": [
+    {
+      "id": "2346916b-e327-54c1-b29a-4277f7cf2f22",
+      "code": "I",
+      "domain_code": "I",
+      "domain_title": "Temps consacré à l'apprentissage",
+      "title": "Temps consacré à l'apprentissage",
+      "display_order": 1,
+      "has_global_score": false
+    },
+    {
+      "id": "61386cba-4bbc-5408-aa3a-d842298c2bce",
+      "code": "II.1",
+      "domain_code": "II",
+      "domain_title": "Culture de la classe",
+      "title": "Environnement favorable à l'apprentissage",
+      "display_order": 2,
+      "has_global_score": true
+    },
+    {
+      "id": "508840fa-24fb-5e1d-9f35-f4f62e5bb801",
+      "code": "II.2",
+      "domain_code": "II",
+      "domain_title": "Culture de la classe",
+      "title": "Attentes positives en termes de comportement",
+      "display_order": 3,
+      "has_global_score": true
+    },
+    {
+      "id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "III.1",
+      "domain_code": "III",
+      "domain_title": "Enseignement",
+      "title": "Pratiques de l'enseignant.e",
+      "display_order": 4,
+      "has_global_score": true
+    },
+    {
+      "id": "422c46ae-d54b-5980-8e79-573c8ac3eaf0",
+      "code": "III.2",
+      "domain_code": "III",
+      "domain_title": "Enseignement",
+      "title": "Comportements des apprenant.e.s",
+      "display_order": 5,
+      "has_global_score": false
+    },
+    {
+      "id": "000a37b6-72d8-5acd-8807-77b03691b502",
+      "code": "IV",
+      "domain_code": "IV",
+      "domain_title": "Compétences socio-émotionnelles",
+      "title": "Compétences socio-émotionnelles",
+      "display_order": 6,
+      "has_global_score": true
+    }
+  ],
+  "questions": [
+    {
+      "id": "fa42f2c2-355b-552d-89fb-731341cb4c9e",
+      "competence_id": "2346916b-e327-54c1-b29a-4277f7cf2f22",
+      "code": "1.1",
+      "title": "L'enseignant.e enseigne et propose une activité d'apprentissage à au moins 2/3 des apprenant.e.s.",
+      "type": "YES_NO",
+      "scale": 2,
+      "allow_na": false,
+      "display_order": 1,
+      "tooltip_data": "{\"title\": \"1.1 L'enseignant.e enseigne et propose une activité d'apprentissage à au moins 2/3 des apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"check-circle\", \"label\": \"Oui\", \"description\": \"Les activités d'apprentissage comprennent toute activité liée au contenu du cours, quelle que soit sa qualité et s'observent pendant toute la durée du déroulement de la séquence d'apprentissage.\\nSi l'enseignant quitte la salle de classe mais qu'il a fourni aux apprenants une activité d'apprentissage, celle-ci est toujours considérée comme une activité d'apprentissage.\"}, {\"icon\": \"times-circle\", \"label\": \"Non\", \"description\": \"Les activités de non-apprentissage comprennent toute activité qui n'est pas liée au contenu de la classe, y compris les activités de gestion de la classe telles que la prise des présences ou la discipline des élèves, ou toute autre activité qui fait attendre les élèves.\\nLes processus de base de la classe, tels que la préparation du matériel pour une leçon/séquence didactique, la transition vers une nouvelle activité ou la réalisation de tâches administratives, peuvent être prolongés.\"}]}"
+    },
+    {
+      "id": "db0d910e-5ba2-5f41-8e0f-46ce8e28fd17",
+      "competence_id": "2346916b-e327-54c1-b29a-4277f7cf2f22",
+      "code": "1.2",
+      "title": "Les apprenant.e.s se consacrent à leur tâche.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": true,
+      "display_order": 2,
+      "tooltip_data": "{\"title\": \"1.2 Les apprenant.e.s se consacrent à leur tâche.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"6 apprenants ou plus ne sont pas à la tâche\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"2-5 apprenants ne sont pas à la tâche\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"Tous les apprenants sont à la tâche, bien qu'un apprenant ne puisse y être.\"}, {\"icon\": \"minus-circle\", \"label\": \"N/A\", \"description\": \"Le comportement ne peut pas être observé pendant la séance.\"}]}"
+    },
+    {
+      "id": "34021e91-b605-5b5e-8ed1-b4fe927a1339",
+      "competence_id": "2346916b-e327-54c1-b29a-4277f7cf2f22",
+      "code": "1.3",
+      "title": "Les apprenant.e.s participent activement aux tâches d'apprentissage.",
+      "type": "YES_NO",
+      "scale": 2,
+      "allow_na": true,
+      "display_order": 3,
+      "tooltip_data": "{\"title\": \"1.3 Les apprenant.e.s participent activement aux tâches d'apprentissage.\", \"subtitle\": \"Ce comportement permet de vérifier si l'enseignant a proposé une activité d'apprentissage à laquelle les élèves participent activement, car la participation active est considérée comme plus efficace pour l'engagement des élèves du secondaire. Notez que répondre à une question est considéré comme un engagement actif : écoutez pendant l'observation pour voir si la plupart des élèves répondent, même de manière synchronisée.\", \"items\": [{\"icon\": \"check-circle\", \"label\": \"Oui\", \"description\": \"La plupart des apprenant.e.s participent activement à la tâche proposée.\"}, {\"icon\": \"times-circle\", \"label\": \"Non\", \"description\": \"La plupart des apprenant.e.s ne participent pas activement à la tâche proposée.\"}, {\"icon\": \"minus-circle\", \"label\": \"N/A\", \"description\": \"Le comportement ne peut pas être observé pendant la séance.\"}]}"
+    },
+    {
+      "id": "7ad84908-2122-58b1-880f-9d680fa0d4a8",
+      "competence_id": "61386cba-4bbc-5408-aa3a-d842298c2bce",
+      "code": "2.1.1",
+      "title": "L'enseignant.e traite les apprenant.e.s avec respect.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 1,
+      "tooltip_data": "{\"title\": \"2.1.1 L'enseignant.e traite les apprenant.e.s avec respect.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne traite pas tous les apprenants avec respect.\\nPar exemple : l'enseignant peut crier sur certains enfants, les gronder, les humilier/ridiculiser, ou recourir à des châtiments corporels pour les discipliner.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant traite tous les apprenants avec un peu de respect.\\nPar exemple : l'enseignant ne traite pas les apprenants de manière irrespectueuse (par exemple, il ne crie pas ou ne ridiculise pas les apprenants), mais il ne leur témoigne pas non plus un respect absolu (par exemple, appeler les apprenants par leurs noms ou dire « s'il vous plaît » ou « merci », ou d'autres signes de respect culturellement pertinents).\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant traite tous les apprenants avec respect.\\nPar exemple : L'enseignant appelle les apprenants par leurs noms, dit « s'il vous plaît » et « merci », ou fait appel à d'autres marques de respect culturellement pertinentes.\"}]}"
+    },
+    {
+      "id": "89a39509-e0d0-5a79-bd64-6f12088bbef7",
+      "competence_id": "61386cba-4bbc-5408-aa3a-d842298c2bce",
+      "code": "2.1.2",
+      "title": "L'enseignant.e utilise un langage positif avec les apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 2,
+      "tooltip_data": "{\"title\": \"2.1.2 L'enseignant.e utilise un langage positif avec les apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant n'utilise pas de langage positif dans sa communication avec les apprenants.\\nPar exemple : Toi, tu n'as rien compris.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant utilise partiellement un langage positif dans sa communication avec les apprenants.\\nPar exemple : L'enseignant dit « bon travail » ou « bien », quoique rarement.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant utilise systématiquement un langage positif dans sa communication avec les apprenants.\\nPar exemple : l'enseignant utilise systématiquement des expressions encourageantes telles que « excellent travail !» lorsque les apprenants lui montrent leur travail ou encore « vous pouvez y arriver !» ou « Vous êtes vraiment un groupe d'apprenants doués ».\"}]}"
+    },
+    {
+      "id": "42bc1669-731f-591f-aba3-673d0bd1bc4b",
+      "competence_id": "61386cba-4bbc-5408-aa3a-d842298c2bce",
+      "code": "2.1.3",
+      "title": "L'enseignant.e répond aux besoins des apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": true,
+      "display_order": 3,
+      "tooltip_data": "{\"title\": \"2.1.3 L'enseignant.e répond aux besoins des apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant n'est pas conscient des besoins des apprenants OU ne s'occupe pas du problème du moment.\\nPar exemple : Un élève peut ne pas avoir le matériel nécessaire pour la leçon et l'enseignant ne le remarque pas ou le voit et l'ignore. Ou bien, un élève peut être contrarié à cause d'une mauvaise note ou d'un problème personnel, et l'enseignant ignore l'élève ou se montre indifférent/méprisant face au problème (par exemple, l'enseignant dit à l'élève de\\n« s'en remettre » ou de « se ressaisir »).\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant répond aux besoins des apprenants mais ne résout peut-être pas le problème du moment.\\nPar exemple : Un élève peut être contrarié parce qu'il n'a pas de crayon et l'enseignant demande à un autre élève de partager son crayon, mais il refuse. L'enseignant continue la leçon sans résoudre le problème.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant répond immédiatement aux besoins des apprenants en remédiant spécifiquement au problème.\\nPar exemple : Si un élève n'a pas de crayon, l'enseignant autorise l'élève à en emprunter un dans sa boîte à crayons de rechange.\"}, {\"icon\": \"minus-circle\", \"label\": \"N/A\", \"description\": \"Le comportement ne peut pas être observé pendant la séance.\"}]}"
+    },
+    {
+      "id": "eb7e82f4-99b2-5c99-aafc-170aec2a7538",
+      "competence_id": "61386cba-4bbc-5408-aa3a-d842298c2bce",
+      "code": "2.1.4",
+      "title": "L'enseignant.e tient compte des diversités des apprenant.e.s dans la classe.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 4,
+      "tooltip_data": "{\"title\": \"2.1.4 L'enseignant.e tient compte des diversités des apprenant.e.s dans la classe.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne traite pas tous les apprenants avec considération\\nIl arrive que l'enseignant (e) se laisse aller à des préjugés sexistes en offrant aux élèves des possibilités inégales de participer aux activités de la classe en exprimant des attentes inégales à l'égard des comportements ou des capacités des apprenants.\\nPar exemple : Un (e) enseignant (e) ne demande qu'aux garçons ou aux filles de répondre qu'aux questions difficiles. Ou bien il (elle) demande aux apprenants de tous les sexes de répondre aux questions difficiles, mais ne demande qu'aux filles de nettoyer le tableau ou de distribuer le matériel d'apprentissage. D'autres exemples de préjugés sexistes consistent pour les enseignants à réprimander les garçons mais pas les filles, après qu'ils aient mal répondu à une question ou qu'ils se soient mal comportés. Les enseignants peuvent également féliciter les filles, mais pas les garçons, après une bonne réponse à une question.\\nOu encore, l'enseignant (e) fait asseoir les apprenants handicapés séparément des autres. Il peut exprimer des préjugés à l'égard des handicapés dans la salle de classe en attendant pas grand-chose d'eux sur le plan du comportement ou des capacités.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant traite rarement les apprenants avec considération. L'enseignant (e) donne aux apprenants de tous les sexes des chances égales de participer aux activités de la classe et à des attentes similaires pour tous les apprenants.\\nPar exemple : L'enseignant € fait appel de manière égale aux apprenants de tous les sexes pour répondre aux questions. L'enseignant € demande aux garçons et aux filles de nettoyer le tableau et de distribuer le matériel d'apprentissage.\\nOu encore : L'enseignant permet aux apprenants en situation de handicap de travailler avec les autres camarades de classe pendant les travaux de groupe, leur donne la possibilité de poser des questions et de participer aux activités d'apprentissage de toute la classe. De même, l'enseignant félicité les apprenants en situation de handicap au même titre que les autres apprenants dans la classe.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant traite tous les apprenants avec la même considération sans discrimination de genre, d'équité et de handicap. L'enseignant (e) donne aux apprenants de tous les sexes des chances égales de participer aux activités de la classe, à des attentes similaires pour tous les apprenants ET remet en question les stéréotypes liés au gendre dans la classe.\\nPar exemple : L'enseignant (e) fait appel de manière égale aux apprenants de tous les sexes pour répondre aux questions difficiles et félicite les garçons et les filles lorsqu'ils répondent correctement aux questions. L'enseignant demande aux garçons et aux filles de nettoyer le tableau et de distribuer le matériel d'apprentissage. L'enseignant se sert également d'exemples et d'explications qui présentent des scientifiques, des médecins et des astronautes féminins plutôt que masculins et/ou encourage les discussions avec les apprenants sur les stéréotypes liés au genre et/ou l'égalité entre les sexes. L'enseignant peut également encourager activement une participation égale en faisant des commentaires tels que « écoutons davantage les filles » ou « Maintenant que nous avons entendu une fille, écoutons un garçon.\\nPar exemple : L'enseignant amène les apprenants en situation de handicap à travailler avec d'autres lors des travaux de groupe et donne les exemples et des explications qui mettent en scène des personnes handicapées à des postes importants.\"}]}"
+    },
+    {
+      "id": "844dadba-5715-5269-9e32-badac99681a4",
+      "competence_id": "508840fa-24fb-5e1d-9f35-f4f62e5bb801",
+      "code": "2.2.1",
+      "title": "L'enseignant.e définit des attentes comportementales claires pour les activités des apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 1,
+      "tooltip_data": "{\"title\": \"2.2.1 L'enseignant.e définit des attentes comportementales claires pour les activités des apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne définit pas d'attentes en termes de comportement pour les tâches\\nou les activités en classe.\\nPar exemple : L'enseignant peut dire : « Travaillez sur vos compétences en compréhension de la lecture » sans fournir d'instructions sur le comportement attendu pour l'activité.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant définit des attentes peu claires et vagues en termes de comportement pour les activités/tâches de routine en classe.\\nPar exemple : Lors de l'introduction d'une activité de groupe, l'enseignant dit : « Asseyez-vous dans les groupes qui vous sont assignés à l'avance et comportez-vous correctement », sans préciser ce que ce comportement implique.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant définit clairement les attentes en termes de comportement tout au long de la leçon pour les tâches ou les activités en classe.\\nPar exemple : lors de l'introduction d'une activité de groupe, l'enseignant indique explicitement le comportement attendu des apprenants du groupe, par exemple, « parlez à voix basse » ou « prenez la parole à tour de rôle ». Si les apprenants travaillent de manière indépendante, l'enseignant peut donner des directives sur l'étape à suivre lorsqu'ils terminent l'activité. L'enseignant peut dire :\\n« Veuillez-vous lever tranquillement, apportez-moi votre feuille de travail et lisez pendant que vous attendez que vos camarades de classe terminent. »\\nOu alors, l'enseignant n'est pas observé en train de définir clairement les attentes des apprenants en termes de comportement, mais les apprenants se comportent bien tout au long de la leçon.\"}]}"
+    },
+    {
+      "id": "e9c16d82-6bce-5a7a-9c1f-fd141f0ee72a",
+      "competence_id": "508840fa-24fb-5e1d-9f35-f4f62e5bb801",
+      "code": "2.2.2",
+      "title": "L'enseignant.e reconnaît le comportement positif des apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 2,
+      "tooltip_data": "{\"title\": \"2.2.2 L'enseignant.e reconnaît le comportement positif des apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne salue pas le comportement des apprenants qui répond ou dépasse les attentes.\\nPar exemple ; un enseignant qui reste indifférents au comportement des apprenant\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant salue le comportement de certains apprenants, mais n'est pas précis quant à leur comportement attendu.\\nPar exemple : si un groupe se comporte comme attendu, l'enseignant peut dire : « Ce groupe travaille bien ensemble » ou « Ce groupe fait du bon travail » sans préciser pourquoi ou comment.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant salue le comportement positif des apprenants qui satisfait ou dépasse les attentes.\\nPar exemple : Un enseignant peut dire à la classe : « Je viens de remarquer que les membres du groupe A prennent la parole à tour de rôle et travaillent de manière proactive à la prochaine tâche. »\"}]}"
+    },
+    {
+      "id": "081bcf68-dd3c-5579-aacf-4660d0790812",
+      "competence_id": "508840fa-24fb-5e1d-9f35-f4f62e5bb801",
+      "code": "2.2.3",
+      "title": "L'enseignant.e réoriente le mauvais comportement et se concentre sur le comportement attendu.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 3,
+      "tooltip_data": "{\"title\": \"2.2.3 L'enseignant.e réoriente le mauvais comportement et se concentre sur le comportement attendu.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"La correction de la mauvaise conduite est inefficace et se concentre sur les mauvais comportements, plutôt que le comportement attendu.\\nPar exemple : Si l'enseignant remarque un élève distrait, il interrompt la leçon et appelle l'élève par son nom en lui demandant : « Pourquoi ne fais-tu pas attention en classe ? » Ou encore, l'enseignant continue d'ignorer l'élève distrait, mais ce dernier commence à se moquer et à se disputer avec le camarade assis à côté d'elle. Ce comportement détourne l'attention de toute la classe, qui se concentre plutôt sur les deux apprenants.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"La correction des mauvais comportements est efficace mais se concentre sur les comportements indésirables plutôt que sur le comportement attendu. Ou encore, la correction du mauvais comportement est quelque peu efficace et se concentre sur le comportement attendu.\\nPar exemple : en remarquant que 3 apprenants ne Travaillent pas sur les problèmes assignés, l'enseignant peut dire : « Vous devez arrêter de parler maintenant, vous faites trop de bruit. » Cette déclaration se concentre sur le comportement négatif des apprenants perturbateurs plutôt que sur ce qu'on attend d'eux. Par conséquent, les apprenants perturbateurs se calment. Dans un autre scénario, l'enseignant réoriente les apprenants en leur demandant de « se concentrer sur la tâche à accomplir. » Même si l'enseignant se concentre sur le comportement positif attendu des apprenants, ils continuent pour la plupart à bavarder.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"Lorsqu'un problème survient, la correction de la mauvaise conduite permet de résoudre efficacement le problème et se concentre sur le comportement attendu.\\nPar exemple : si les apprenants parlent fort et perturbent l'activité d'apprentissage,\\nl'enseignant-dit « N'oubliez pas de parler à voix basse ». Les enfants obtempèrent.\\nOu alors, l'enseignant n'est pas observé en train de recadrer la conduite des apprenants, mais les apprenants se comportent bien tout au long de la leçon.\"}]}"
+    },
+    {
+      "id": "fe9fded6-407d-5ec6-8259-ce0463028c31",
+      "competence_id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "3.1.1",
+      "title": "L'enseignant.e adapte l'apprentissage au niveau et au milieu des apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 1,
+      "tooltip_data": "{\"title\": \"3.1.1 L'enseignant.e adapte l'apprentissage au niveau et au milieu des apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant n'adapte pas\\nl'enseignement selon le niveau des apprenants et continue la séquence(leçon) même si les apprenants ne comprennent pas.8\\nPar exemple : L'enseignant peut remarquer que de nombreux apprenants n'ont pas la bonne réponse, mais il ne réexplique pas le concept et ne donne pas d'autres occasions d'apprendre.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant adapte légèrement l'enseignement, mais cette adaptation est brève et superficielle.\\nPar exemple : Lorsque les apprenants remplissent une feuille d'alphabet, l'enseignant remarque qu'ils ne mettent pas les points sur les « i ». En réponse, il rappelle brièvement à la classe de mettre les points sur les « i ».\\nOu encore, lors de la résolution du problème de multiplication 7 x 3, un élève confond le processus avec l'addition et répond « 10 » sur son cahier d'exercices. L'enseignant lui rappelle alors qu'il s'agit d'une multiplication et non d'une addition.\\nOu encore, lorsque les apprenants ne comprennent pas la notion de membranes cellulaires ou de noyau de la cellule, alors l'enseignant rappelle brièvement à la classe la notion de membranes cellulaires.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant adapte considérablement l'enseignement pour les apprenants en leur donnant plus d'occasions d'apprendre. L'enseignant peut également présenter les informations d'une manière différente pour aider les apprenants à mieux comprendre le concept enseigné. Il peut aussi fournir des tâches plus difficiles pour ceux qui ont déjà une compréhension approfondie.\\nPar exemple : Lorsque les apprenants remplissent une feuille d'alphabet, l'enseignant remarque qu'ils ne mettent pas les points sur les « i ». Alors, il arrête brièvement l'activité et examine les différences entre les majuscules et les minuscules avant de poursuivre l'activité de l'alphabet. En se rendant compte qu'un élève ne comprend pas le processus de multiplication, l'enseignant peut faire un dessin ou utiliser des objets concrets pour aider l'élève à mieux comprendre l'opération.\\nOu encore, si l'enseignant remarque qu'un élève a déjà rempli la feuille de travail, il peut lui donner une autre activité à accomplir en attendant que le reste de la classe termine.\\nEn sciences de la vie et de la terre, lorsque les apprenants ne comprennent pas la notion de membranes cellulaires ou de noyau dans une séquence didactique sur la cellule, alors l'enseignant arrête brièvement l'activité et propose aux apprenants de construire un modèle de cellule avec des matériaux simples comme des ballons pour représenter des organites avant de continuer sa séquence.\"}]}"
+    },
+    {
+      "id": "ff5a1b20-d342-541e-b3ca-7a35c81464de",
+      "competence_id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "3.1.2",
+      "title": "L'enseignant.e fournit des commentaires ou des informations spécifiques qui aident à clarifier les problèmes de compréhension des apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 2,
+      "tooltip_data": "{\"title\": \"3.1.2 L'enseignant.e fournit des commentaires ou des informations spécifiques qui aident à clarifier les problèmes de compréhension des apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne fournit pas de commentaires/invites aux apprenants sur leurs problèmes de compréhension OU les commentaires fournis sont de simples déclarations évaluatives (du genre\\n« C'est correct »\\nPar exemple : lorsqu'un élève donne une réponse incorrecte à la question d'un enseignant, ce dernier répond en disant\\nce n'est pas la bonne réponse » continue.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant fournit aux apprenants des commentaires/invites généraux ou superficiels sur leurs problèmes de compréhension.\\nPar exemple : dans un cours de mathématiques, l'enseignant dit : « Vous avez oublié d'inclure le signe négatif », sans fournir d'autres informations\\nou invites.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant fournit aux apprenants des commentaires/invites spécifiques, qui contiennent des informations de fond\\nqui aident à résoudre les problèmes de compréhension des enfants.\\nPar exemple, l'enseignant dit : « Vous souvenez-vous de ce qui se passe lorsqu'on multiplie un nombre positif et un nombre négatif ? Jetons un œil sur vos notes. Maintenant, regardons vos réponses. Que devez-vous changer pour trouver la bonne réponse ? »\"}]}"
+    },
+    {
+      "id": "a4639c7e-a106-5a70-8470-69a070526b99",
+      "competence_id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "3.1.3",
+      "title": "L'enseignant.e offre des choix aux apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 3,
+      "tooltip_data": "{\"title\": \"3.1.3 L'enseignant.e offre des choix aux apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant(e) n'offre pas explicitement de choix aux apprenants. L'enseignant(e) décide de la manière dont les activités d'apprentissage doivent être réalisées, sans proposer aux apprenants différentes options pour aborder la tâche.\\nExemple : Les apprenants sont invités à résoudre une série d'équations mathématiques en suivant un ensemble d'étapes prescrites. Ou bien l'enseignant(e) demande aux apprenants de rédiger une dissertation argumentée avec un partenaire, sans leur laisser le choix de la personne avec laquelle ils travailleront ou du sujet.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant(e) donne explicitement aux apprenants au moins un choix superficiel qui n'est pas lié à l'objectif d'apprentissage.\\nexemple : L'enseignant(e) permet aux apprenants de choisir l'ordre dans lequel ils réaliseront les activités (Exemple, résoudre une série d'équations mathématiques ou s'entraîner de manière autonome à l'emploi du temps) ou de choisir leur propre partenaire lorsqu'il leur est demandé de rédiger une dissertation argumentée.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant(e) propose explicitement aux apprenants au moins un choix substantiel lié à l'objectif d'apprentissage.\\nExemple : L'enseignant(e) permet aux apprenants de recourir à leurs propres méthodes pour résoudre des équations mathématiques (Exemple, en utilisant du matériel concret, des diagrammes ou des formules écrites) ou laisse les apprenants choisir le problème mathématique à résoudre parmi plusieurs exemples. Ou encore, l'enseignant(e) permet aux apprenants de choisir le sujet de leur dissertation argumentée ou de choisir entre la rédaction d'une dissertation, un exposé ou une présentation visuelle.\"}]}"
+    },
+    {
+      "id": "959caef7-598e-5b27-b290-dc6c14faf011",
+      "competence_id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "3.1.4",
+      "title": "L'enseignant.e établit des liens avec des connaissances qui se rapportent à la vie courante des apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 4,
+      "tooltip_data": "{\"title\": \"3.1.4 L'enseignant.e établit des liens avec des connaissances qui se rapportent à la vie courante des apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant n'établit aucun lien entre la leçon et la vie quotidienne des apprenants.\\nLes exemples utilisés proviennent du manuel ou de contextes étrangers, sans adaptation.\\nLes apprenants écoutent passivement sans voir l'utilité pratique de ce qu'ils apprennent.\\nExemple :\\nEn mathématiques, pour enseigner les fractions, l'enseignant dit : “Quand on partage un pain de manioc entre quatre enfants, chaque enfant reçoit quelle part ?”\\nLes apprenants ne comprennent pas le principe du partage égal.\\nL'enseignant ignore et continue sa leçon.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant fait quelques liens entre la leçon et la vie quotidienne, mais de façon limitée ou superficielle.\\nLes exemples sont parfois pertinents, mais peu développés ou non exploités pour la compréhension.\\nIl mentionne des situations locales, mais sans vraiment impliquer les apprenants ou approfondir les comparaisons.\\nExemple :\\nEn mathématiques, pour enseigner les fractions, l'enseignant dit : “Quand on partage un pain de manioc entre quatre enfants, chaque enfant reçoit quelle part ?”\\nLes apprenants participent à la manipulation et montrent une compréhension partielle : ils partagent approximativement mais ne nomment pas correctement la fraction ou confondent le nombre de parts et le dénominateur.\\nL'enseignant passe rapidement à un autre apprenant sans clarifier la confusion.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant intègre naturellement des liens entre la leçon et la vie courante des apprenants. Les exemples, les situations et les discussions s'appuient sur le vécu local (village, marché, famille, école, agriculture, transport, etc.). Les apprenants participent activement : ils donnent leurs propres exemples, comparent avec leurs expériences.\\nL'enseignant utilise ces liens pour renforcer la compréhension du concept étudié.\\nExemples\\nEn mathématiques : pour enseigner les fractions, l'enseignant dit : “Quand on partage un pain de manioc entre quatre enfants, chaque enfant reçoit quelle part ?” Puis il fait manipuler les apprenants avec des objets (pain, craies, fruits).\\nLes apprenants participent activement, proposent des exemples et posent des questions. Ils manifestent une compréhension claire du lien entre la leçon et leur expérience.\\nL'enseignant dit : Excellent et demande à un des apprenants s'il peut expliquer à ses collègues la procédure pour trouver la réponse.\"}]}"
+    },
+    {
+      "id": "8f5aec3a-d89b-5cdf-b0a7-54a7bd0c028e",
+      "competence_id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "3.1.5",
+      "title": "L'enseignant.e énonce clairement les objectifs de la séance/séquence et les relie aux activités de la classe.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 5,
+      "tooltip_data": "{\"title\": \"3.1.5 L'enseignant.e énonce clairement les objectifs de la séance/séquence et les relie aux activités de la classe.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne relie pas ce qui est\\nenseigné à d'autres connaissances ou à la vie quotidienne des apprenants.\\nL'enseignant peut utiliser des exemples pouvant être liés à d'autres contenus ou la vie des apprenants, mais ne fais pas de liens avec l'activité d'apprentissage.\\nPar exemple : au cours d'une séquence didactique sur les fractions, l'enseignant utilise une image d'un gâteau et la divise en quarts, mais ne fait pas le lien avec l'expérience des apprenants coupant des gâteaux. Ou encore, l'enseignant peut dire « rappelez-vous, hier, nous avons appris les nombres entiers ?\\nAujourd'hui, nous allons apprendre à ajouter des fractions. »\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant peut tenter de lier la leçon à d'autres connaissances de contenu ou à la vie quotidienne des apprenants, mais les liens sont superficiels, confus ou peu clairs.\\nPar exemple : en introduisant une leçon sur les fractions, l'enseignant peut dire « quand on coupe un gâteau, on utilise des fractions » et continue d'expliquer les fractions. Le lien avec la vie des apprenants est superficiel et non spécifique. Ou encore, l'enseignant peut dire\\nrappelez- vous hier, nous avons appris les règles pour ajouter des nombres entiers ? Maintenant, nous allons utiliser ces règles et les appliquer à l'ajout de fractions. » Cependant, en expliquant comment ajouter des fractions, l'enseignant ne lie pas les règles aux règles d'ajout de nombres entiers.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant connecte la leçon d'une manière pertinente à d'autres connaissances de contenu ou à la vie quotidienne des apprenants.\\nPar exemple : en donnant un cours sur les fractions, l'enseignant peut relier le contenu aux expériences des apprenants en demandant : « Qui n'a jamais coupé un gâteau d'anniversaire ? Comment vous êtes-vous assuré qu'il y avait suffisamment de tranches pour tout le monde ? Apprendre à connaître les fractions peut nous aider à diviser un gâteau entre des personnes. » L'enseignant peut également relier la leçon à une leçon précédente en disant : « Vous vous souvenez de ce que nous avons appris hier à propos des moitiés ? Nous avons appris que lorsque nous coupons un gâteau en deux, deux personnes peuvent le partager équitablement. Aujourd'hui, nous allons apprendre à diviser le gâteau en quatre, afin que quatre personnes puissent partager le gâteau. Lorsque nous formions des moitiés, nous nous sommes assurés d'avoir des moitiés de taille identique. C'est la même chose ici, lorsque nous formons des quarts, nous devons nous assurer de conserver des tranches de la même taille. » Le lien entre la leçon en cours et/ou les autres connaissances de contenu et/ou la vie quotidienne des apprenants est évident.\"}]}"
+    },
+    {
+      "id": "c287fbcd-b8fd-59f3-a7f9-0d9ad9bd0b73",
+      "competence_id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "3.1.6",
+      "title": "L'enseignant.e fait des démonstrations (mises en scène, manipulation, exemples, illustrations ou réflexions à haute voix).",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 6,
+      "tooltip_data": "{\"title\": \"3.1.6 L'enseignant.e fait des démonstrations (mises en scène, manipulation, exemples, illustrations ou réflexions à haute voix).\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne fait pas de démonstration.\\nPar exemple : L'enseignant consacre l'intégralité du cours à lire un passage et à poser des questions aux apprenants sur le texte mais ne présente aucune procédure. Dans un cours de mathématiques, l'enseignant se contente de donner aux apprenants des problèmes qu'ils doivent résoudre seuls, sans leur montrer la procédure à suivre.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant fait une démonstration partielle de l'activité d'apprentissage.\\nPar exemple : Dans un cours d'anglais dont l'objectif est d'écrire un paragraphe, l'enseignant montre uniquement comment écrire une phrase à thème. Dans un cours de mathématiques, l'enseignant peut montrer comment dessiner un graphique à barres, mais ne précise pas comment il a extrait les données du texte pour créer le graphique à barres.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant fait une démonstration complète de l'activité d'apprentissage en reproduisant toutes les parties de la procédure OU en simulant la procédure ET en réfléchissant à haute voix.\\nPar exemple : L'enseignant peut montrer différentes manières de résoudre un problème de mathématiques (simulation d'une procédure) et, ce faisant, il dit ce qu'il pense à chaque étape de l'équation (réfléchit à haute voix). Ou si les apprenants calculent le périmètre de leur table, l'enseignant démontre chaque étape du processus (simulation complète d'une procédure) à l'aide d'images, et/ou d'objets physiques, ou d'autres matériaux disponibles localement. Dans la démonstration, l'enseignant dit ce qu'il pense à chaque étape du processus.\"}]}"
+    },
+    {
+      "id": "0d998e4c-a3d6-5729-9839-f4a296f4bdfe",
+      "competence_id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "3.1.7",
+      "title": "L'enseignant.e se sert des questions, des informations ou d'autres stratégies pour déterminer le niveau de compréhension des apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 7,
+      "tooltip_data": "{\"title\": \"3.1.7 L'enseignant.e se sert des questions, des informations ou d'autres stratégies pour déterminer le niveau de compréhension des apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne pose aucune question, ne donne aucune information aux apprenants ou quand il le fait, la classe répond de manière synchronisée, ce qui est accepté sans autre précision pour vérifier la compréhension.\\nPar exemple : En expliquant un concept, l'enseignant demande :« Avez- vous tous compris ? » Les apprenants répondent à l'unisson :Oui ». Ou encore, l'enseignant demande : « 'C'est correct, n'est-ce pas ? », après avoir terminé une série de problèmes. La classe à l'unisson ou un seul apprenant répond : Oui, c'est correct ».\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant se sert de questions, d'informations ou d'autres stratégies efficaces pour déterminer le niveau de compréhension d'une poignée d'apprenants seulement.\\nPar exemple : L'enseignant demande :\\nCombien font 7+8 ? » Seuls quelques apprenants répondent en levant la main, un groupe dans lequel l'enseignant interroge un ou deux apprenants. Ou encore, l'enseignant pose la question, mais ne demande pas aux apprenants de lever la main pour y répondre et se contente de laisser les apprenants donner volontairement leurs réponses.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant se sert de questions, d'informations ou d'autres stratégies efficaces pour déterminer le niveau de compréhension de la plupart des apprenants.\\nPar exemple : L'enseignant dit : « Pouce vers le haut si vous êtes d'accord ou pouce vers le bas si vous n'êtes pas d'accord avec cette affirmation : Les triangles équilatéraux ont des angles égaux. »\\nL'enseignant demande également aux apprenants de démontrer leurs connaissances en demandant à tous les apprenants de partager leurs réponses, par exemple en demandant à chaque élève de lire la phrase qu'il a écrite en utilisant des verbes au passé.\"}]}"
+    },
+    {
+      "id": "f63996bf-0f9d-507d-bc06-dddb47198e31",
+      "competence_id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "3.1.8",
+      "title": "L'enseignant.e suit les apprenant.e.s pendant le travail individuel ou de groupe et les incite à la production au-delà de la première tâche.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 8,
+      "tooltip_data": "{\"title\": \"3.1.8 L'enseignant.e suit les apprenant.e.s pendant le travail individuel ou de groupe et les incite à la production au-delà de la première tâche.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne suit pas les apprenants lorsqu'ils travaillent de manière indépendante ou en groupes.\\nPar exemple : L'enseignant est assis à son bureau ou reste debout devant la classe lorsque les apprenants travaillent.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant suit certains apprenants lorsqu'ils travaillent indépendamment ou en groupe pour vérifier leur compréhension.\\nPar exemple : L'enseignant observe le travail de quelques apprenants pour vérifier l'exactitude, clarifie des concepts ou pose des questions.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant suit systématiquement la plupart des apprenants en se promenant dans la classe et en s'approchant de chaque élève ou des groupes pour vérifier leur compréhension.\\nPar exemple : lorsque les apprenants travaillent, l'enseignant se promène dans la classe et s'adresse systématiquement aux apprenants ou aux groupes. L'enseignant observe le travail de la plupart des apprenants, clarifie les concepts et pose des questions.\"}]}"
+    },
+    {
+      "id": "731adc9f-bff3-5a08-b6e3-746174457498",
+      "competence_id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "3.1.9",
+      "title": "L'enseignant.e fournit des commentaires ou informations spécifiques qui aident à identifier les bonnes réponses des apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 9,
+      "tooltip_data": "{\"title\": \"3.1.9 L'enseignant.e fournit des commentaires ou informations spécifiques qui aident à identifier les bonnes réponses des apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne fournit pas de commentaires/informations aux apprenants sur leurs bonnes réponses OU les commentaires fournis sont de simples déclarations évaluatives (du genre\\n« C'est correct »\\nPar exemple : Lorsqu'un élève répond correctement à la question d'un enseignant, celui-ci réagit en disant\\n« C'est correct » et passe à autre chose.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant fournit aux enfants des commentaires/informations généraux ou superficiels sur leurs bonnes réponses.\\nPar exemple : Si les apprenants écrivent des histoires dans le cadre d'un devoir, l'enseignant dit « Bon travail sur le troisième paragraphe », sans préciser ce que l'élève en question a fait pour parvenir à ce bon paragraphe.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant fournit aux apprenants des commentaires / informations spécifiques qui contiennent des informations de fond permettant d'identifier les bonnes réponses des apprenants.\\nPar exemple : Si les apprenants écrivent des histoires, l'enseignant dit « Vous faites du bon travail en intéressant le lecteur à ce paragraphe lorsque vous écrivez « personne ne savait ce qui allait se passer Cette phrase me donne envie de lire davantage ». L'enseignant peut également mettre en évidence le travail d'un élève et dire à toute la classe « Regardez le travail de cette camarade, voyez comment elle a utilisé la droite numérique pour résoudre ce problème de soustraction », puis expliquer comment l'élève a résolu le problème\"}]}"
+    },
+    {
+      "id": "c8532f1d-6e26-5b1c-b233-ad43593026c6",
+      "competence_id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "3.1.10",
+      "title": "L'enseignant.e explique le contenu à l'aide de multiples formes de représentations.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 10,
+      "tooltip_data": "{\"title\": \"3.1.10 L'enseignant.e explique le contenu à l'aide de multiples formes de représentations.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant explique le contenu à l'aide d'une seule forme de représentation OU le contenu n'est tout simplement pas expliqué.\\nPar exemple : L'enseignant déclare : « Une fraction est une combinaison d'un numérateur et d'un dénominateur », sans fournir aucune représentation écrite ou visuelle d'une fraction pendant ce segment de la leçon. Ou alors, l'enseignant ne fournit aucune explication du contenu, utilise trop de termes techniques sans expliquer ce qu'il veut dire, et/ou explique des idées sans ordre ni lien logique. De plus, l'enseignant peut dire : « Une fraction est une combinaison d'un numérateur et d'un dénominateur »m sans dire ce que ces mots signifient. Enfin, l'enseignant ne fournit aucune explication de contenu.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant explique le contenu à l'aide de deux formes de représentation.\\nPar exemple : : L'enseignant déclare : « Une fraction est une combinaison d'un numérateur et d'un dénominateur » et écrit un exemple de fraction au tableau. Dans une leçon de langage, l'enseignant déclare qu'un verbe est un mot d'action et écrit une phrase qui contient un verbe qui est souligné au tableau.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant explique le contenu à l'aide de trois formes de représentation.\\nPar exemple : : L'enseignant déclare : « Une fraction est une combinaison d'un numérateur et d'un dénominateur » et écrit l'exemple de ¼ au tableau. Plus tard dans la leçon, l'enseignant utilise une aide visuelle dans le cadre de son explication du contenu en pliant une feuille de papier en quatre et en coloriant un carré. Dans une leçon de langage, l'enseignant déclare qu'un verbe est un mot d'action et écrit une phrase qui contient un verbe qui est souligné au tableau. L'enseignant mime ensuite une série d'actions et demande aux apprenants d'identifier ces exemples de verbes.\"}]}"
+    },
+    {
+      "id": "34f6a6a8-d0ce-5964-ab84-120a66be256b",
+      "competence_id": "8df8bc94-a388-5f03-b33f-18b89089f742",
+      "code": "3.1.11",
+      "title": "L'enseignant.e incite les apprenant.e.s à poser des questions ouvertes et à effectuer des tâches de réflexion.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 11,
+      "tooltip_data": "{\"title\": \"3.1.11 L'enseignant.e incite les apprenant.e.s à poser des questions ouvertes et à effectuer des tâches de réflexion.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"Les apprenants ne posent pas de questions ouvertes et n'effectuent pas de tâches de réflexion.\\nPour des exemples, reportez-vous au tableau des tâches de réflexion à la page suivante.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"Les apprenants ne posent pas de questions ouvertes ; cependant, ils effectuent des tâches de réflexion superficielles.\\nPour des exemples, reportez-vous au tableau des tâches de réflexion à la page suivante.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"Les apprenants posent de questions ouvertes.\\nPar exemple, après avoir travaillé sur des problèmes de soustraction, un élève demande « Pourquoi 6–9 est-il égal à un nombre négatif ? »\\nOu bien, ils effectuent des tâches de réflexion importantes.\"}]}"
+    },
+    {
+      "id": "2fcc686c-3bc2-5cf4-93b4-6437eb1b3b3a",
+      "competence_id": "422c46ae-d54b-5980-8e79-573c8ac3eaf0",
+      "code": "3.2.1",
+      "title": "Les apprenant.e.s répondent aux questions de l'enseignant.e pendant le travail individuel ou de groupe.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": true,
+      "display_order": 1,
+      "tooltip_data": "{\"title\": \"3.2.1 Les apprenant.e.s répondent aux questions de l'enseignant.e pendant le travail individuel ou de groupe.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"Les apprenants n'expliquent pas leur raisonnement à l'enseignant pendant les activités de la classe et ne posent pas des questions ouvertes. Ils répondent aux questions et/ou contribuent brièvement aux discussions par un « OUI » ou « un non » ou en présentant un simple fait.\\nPar exemple : durant un cours de mathématique, l'enseignant demande : quelle est la probabilité d'obtenir deux six lorsqu'on lance deux dés ? » l'apprenant répond « 1/36 », mais n'explique pas comment il a trouvé la réponse. Ou encore, durant un cours de sciences, l'enseignant demande : « quelles sont les trois échelles de température utilisées aujourd'hui ? » L'apprenant répond : « Celsius, Kelvin et Fahrenheit » mais n'explique pas pourquoi les différentes échelles sont utilisés.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"Les apprenants expliquent leur raisonnement à l'enseignant pendant les activités de la classe ou posent des questions ouvertes, bien que cela ne se produise que rarement (une seule fois).\\nPar exemple : Un apprenant explique comment il a trouvé la réponse à un problème de mathématique en déclarant : « J'ai obtenu le résultat selon lequel la probabilité d'obtenir deux six lorsqu'on lance deux dés est de 1/36 en multipliant la probabilité d'obtenir six lorsqu'on lance un seul dé par le même nombre. J'ai donc fait 1/6 x 1/6, ce qui m'a donné la réponse 1/36 » Ou encore durant un cours de sciences, un apprenant demande : « pourquoi existe-t-il différentes échelles de mesure de la température ? »\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant suit tous les apprenants et répond à leurs préoccupations. Les apprenants expliquent souvent leur raisonnement à l'enseignant pendant les activités de la classe ou posent des questions ouvertes (plus d'une fois).\\nPar exemple ; un apprenant expliique comment il a trouvé la réponse à un problème de mathématique en déclarant : « J'ai obtenu le résultat selon la probabilité d'obtenir deux six lorsqu'on lance deux dés est de 1/36 en multipliant la probabilité d'obtenir un six lorsqu'on lance un seul dé par le même nombre. J'ai donc fait 1/6 x 1/6, ce qui m'a donné la réponse 1/36 ». Un autre apprenant explique ensuite sa méthode pour trouver la réponse en déclarant : « j'ai calculé cela en dessinant un tableau qui présentait tous les résultats possibles de lancer deux dés. J'ai constaté qu'il y avait 36 combinaisons possibles et qu'une seule de ces combinaisons était de deux six.\"}, {\"icon\": \"minus-circle\", \"label\": \"N/A\", \"description\": \"Le comportement ne peut pas être observé pendant la séance.\"}]}"
+    },
+    {
+      "id": "2a86f0d1-7c77-5c13-bfa2-6852ac5f3b9f",
+      "competence_id": "422c46ae-d54b-5980-8e79-573c8ac3eaf0",
+      "code": "3.2.2",
+      "title": "Les apprenant.e.s se portent volontaires pour participer aux activités en classe.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 2,
+      "tooltip_data": "{\"title\": \"3.2.2 Les apprenant.e.s se portent volontaires pour participer aux activités en classe.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"Les apprenants ne se portent pas volontaires pour participer aux activités en classe.\\nPar exemple\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"Seuls quelques apprenants se portent volontaires\\npour participer en exprimant leurs idées et en assumant des rôles.\\nPar exemple : lorsque l'enseignant pose une question, seuls quelques apprenants lèvent la main pour répondre. Plus tard, lorsque l'enseignant pose une autre question, ce sont les mêmes apprenants qui lèvent la main.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"Au moins 3/4 des apprenants se portent volontaires pour participer en exprimant leurs idées et en assumant des rôles.\\nPar exemple : Lorsque l'enseignant pose une question, de nombreux apprenants lèvent la main pour partager leurs réponses. Les apprenants peuvent également se porter volontaires sans que l'enseignant le leur demande (par exemple, un élève propose de partager une expérience connexe lorsque l'enseignant explique un concept)\"}]}"
+    },
+    {
+      "id": "071b9b4d-07f5-56e6-a3d6-bff0fe736e4c",
+      "competence_id": "422c46ae-d54b-5980-8e79-573c8ac3eaf0",
+      "code": "3.2.3",
+      "title": "Les apprenant.e.s travaillent sur leurs tâches.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": true,
+      "display_order": 3,
+      "tooltip_data": "{\"title\": \"3.2.3 Les apprenant.e.s travaillent sur leurs tâches.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"6 apprenants ou plus sont hors tâche\\nPar exemple\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"2 à 5 apprenants sont hors tâche\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"Tous les apprenants travaillent sur leur\\ntâche (un élève peut être hors tâche)\"}, {\"icon\": \"minus-circle\", \"label\": \"N/A\", \"description\": \"Le comportement ne peut pas être observé pendant la séance.\"}]}"
+    },
+    {
+      "id": "71c1dd4b-03ff-5eec-9758-42f6c57df3b2",
+      "competence_id": "000a37b6-72d8-5acd-8807-77b03691b502",
+      "code": "4.1",
+      "title": "L'enseignant.e reconnaît les efforts des apprenant.e.s au lieu de se concentrer uniquement sur les résultats, l'intelligence ou les capacités naturelles.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 1,
+      "tooltip_data": "{\"title\": \"4.1 L'enseignant.e reconnaît les efforts des apprenant.e.s au lieu de se concentrer uniquement sur les résultats, l'intelligence ou les capacités naturelles.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne salue pas les efforts des apprenants. Même si l'enseignant peut féliciter les apprenants pour leur « intelligence », il ne se concentre pas sur les efforts ou le travail des apprenants.\\nPar exemple : L'enseignant s'exclame :\\nTrès bien ! Tu es l'élève le plus intelligent de la classe » ou « Bien joué ! Tu es si intelligent ! »\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"Dans cette classe, l'enseignant salue parfois les efforts des enfants, mais la plupart des compliments sont axés sur les résultats ou l'intelligence des apprenants.\\nPar exemple : Lorsqu'un élève réussit un test, l'enseignant lui dit : « Je sais que tu t'es donné beaucoup de mal pour cela », mais la plupart du temps, l'enseignant félicite les apprenants en disant qu'ils sont « intelligents ».\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"Dans cette classe, l'enseignant salue fréquemment les efforts des apprenants pour maîtriser de nouvelles compétences ou de nouveaux concepts et s'arrête explicitement sur ces efforts.\\nPar exemple : lorsqu'un élève résout avec\\npeine un problème difficile, l'enseignant le complimente et souligne les efforts\\ndéployés pour résoudre le problème.\\nL'enseignant dit : « Tu as avez tellement\\nprogressé sur les problèmes de\\nmultiplication ! Je suis content que tu\\nm'aies demandé de l'aide. Si tu continues à pratiquer et à utiliser les stratégies que nous avons apprises en classe, tu les maîtriseras très bientôt ! »\"}]}"
+    },
+    {
+      "id": "b33d8753-591c-571c-96b8-481a94d8961e",
+      "competence_id": "000a37b6-72d8-5acd-8807-77b03691b502",
+      "code": "4.2",
+      "title": "L'enseignant.e a une attitude positive face aux difficultés des apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 2,
+      "tooltip_data": "{\"title\": \"4.2 L'enseignant.e a une attitude positive face aux difficultés des apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant a une attitude négative face aux difficultés des apprenants.\\nPar exemple : l'enseignant réprimande ouvertement les apprenants pour avoir commis des erreurs ou devient impatient avec un élève qui prend du temps pour comprendre un nouveau concept.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant a une attitude neutre face aux difficultés des apprenants. Bien que l'enseignant ne sanctionne pas un élève pour avoir commis des erreurs ou pour avoir eu du mal avec un nouveau concept, il ne précise pas non plus que l'échec et la frustration sont quelque chose de normal et font partie du processus d'apprentissage.\\nPar exemple : lorsqu'un élève a du mal à résoudre un problème de mathématiques au tableau, l'enseignant se contente de donner la réponse à l'élève de manière neutre (c'est-à-dire sans colère ni impatience).\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant adopte une attitude positive face aux difficultés des apprenants et aide ces derniers à comprendre que l'échec et la frustration font partie intégrante du processus d'apprentissage.\\nPar exemple : Lorsqu'un élève a du mal à résoudre un problème, l'enseignant lui dit :\\nSouviens-toi qu'il est normal de se sentir frustré lorsqu'on essaie de faire quelque chose de nouveau. Voyons comment on peut aborder ce problème. » L'enseignant encourage également l'élève à réfléchir à différentes ressources auxquelles il pourrait s'adresser pour obtenir de l'aide (par exemple, demander conseil à un ami, chercher des réponses dans le manuel, utiliser des matériaux concrets ou des images pour résoudre des problèmes de mathématiques).\"}]}"
+    },
+    {
+      "id": "d5dabce5-e0bb-545b-b7ab-e32187b2e81c",
+      "competence_id": "000a37b6-72d8-5acd-8807-77b03691b502",
+      "code": "4.3",
+      "title": "L'enseignant.e encourage la fixation et l'atteinte des objectifs par les apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 3,
+      "tooltip_data": "{\"title\": \"4.3 L'enseignant.e encourage la fixation et l'atteinte des objectifs par les apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant n'encourage pas les apprenants à définir des objectifs à court ou à long terme.11\\nPar exemple ???\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant encourage les apprenants à définir des objectifs à court terme OU à long terme.11\\nPar exemple : Pour la fixation d'objectifs à court\\nterme, l'enseignant demande : « Combien de pages du livre lirez-vous chaque jour cette semaine ? » Pour la fixation d'objectifs à long terme, l'enseignant dit : « Je veux que vous notiez les progrès que vous avez réalisés par rapport aux objectifs que nous avons fixés au début de l'année scolaire ».\\nOu encore, l'enseignant peut parler de l'importance de fixer des objectifs de manière générale.\\nPar exemple : L'enseignant dit : « Il est important de penser à ce que vous voulez être quand vous grandissez. » En outre, l'enseignant souligne la manière dont les personnages d'une histoire se fixent un objectif à court ou à long terme et comment ils y ont travaillé.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant encourage les apprenants à définir des objectifs à court ET à long terme.11 L'enseignant peut faire référence simultanément à des objectifs à court et à long terme, en particulier lorsqu'il encourage les apprenants à définir un objectif à court terme qui les aidera à atteindre un objectif à long terme.\\nPar exemple : l'enseignant dit : « réfléchissons aux objectifs que nous nous sommes fixés au début de l'année scolaire. Quelle est la chose que vous ferez cette semaine pour vous rapprocher de cet objectif ? » L'enseignant peut également en parler séparément (comme dans les exemples pour « Moyen »).\"}]}"
+    },
+    {
+      "id": "2cef1c36-75b5-5778-bfd2-627af4a2f534",
+      "competence_id": "000a37b6-72d8-5acd-8807-77b03691b502",
+      "code": "4.4",
+      "title": "L'enseignant.e encourage la collaboration des apprenant.e.s par des interactions entre pairs.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 4,
+      "tooltip_data": "{\"title\": \"4.4 L'enseignant.e encourage la collaboration des apprenant.e.s par des interactions entre pairs.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant n'encourage pas la collaboration entre les apprenants.\\nPar exemple : l'enseignant ne crée pas les conditions pour travailler en groupes ou en pairs.\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant encourage une collaboration superficielle des apprenants en partageant des opinions, des matériaux ou des idées.\\nPar exemple : l'enseignant demande aux apprenants de lire le travail de leur voisin ou de partager des crayons les uns avec les autres.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant encourage une collaboration significative entre apprenants en leur demandant de travailler ensemble pour réaliser un produit, résoudre un problème, remplir une feuille de travail ou présenter une nouvelle idée.\\nPar exemple : l'enseignant demande aux\\napprenants de se mettre en pairs ou en\\ngroupes afin d'effectuer une tache qui\\ndemande de la collaboration, par ex. créer\\nun diagramme du cycle de l'eau ou\\ninventer un sketch pour illustrer leurs\\nnouveaux mots de vocabulaire.\\nL'enseignant demande à l'élève de lire le\\ntravail de son voisin et de lui faire des\\ncommentaires sur la façon dont il peut\\naméliorer son travail.\"}]}"
+    },
+    {
+      "id": "5406b969-2875-5754-96be-e32125e13fbd",
+      "competence_id": "000a37b6-72d8-5acd-8807-77b03691b502",
+      "code": "4.5",
+      "title": "L'enseignant.e favorise les compétences interpersonnelles des apprenant.e.s.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 5,
+      "tooltip_data": "{\"title\": \"4.5 L'enseignant.e favorise les compétences interpersonnelles des apprenant.e.s.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"L'enseignant ne favorise pas les compétences interpersonnelles des apprenants.\\nPar exemple :\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"L'enseignant favorise les compétences interpersonnelles des apprenants de manière brève ou superficielle.\\nPar exemple : l'enseignant demande aux apprenants de s'entraider lors d'un exercice de groupe, à un enfant de présenter ses excuses à un camarade ou encourage les apprenants de se relayer lors d'une activité. Cependant, l'enseignant n'explique pas pourquoi ces comportements sont importants.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"L'enseignant favorise les compétences interpersonnelles des apprenants en encourageant la prise de perspective, l'empathie, la maîtrise des émotions ou la résolution de problèmes sociaux.\\nPar exemple : L'enseignant demande à un élève : « D'après toi, comment s'est-il/elle (camarade ou personnage d'un livre) ? »\\nEn lisant une histoire sur un personnage aveugle, l'enseignant s'arrête pour demander aux apprenants d'imaginer comment ils se sentiraient s'ils ne pouvaient pas voir.\"}]}"
+    },
+    {
+      "id": "8195fb5e-e64d-588e-ab11-2a11bd2e2f1d",
+      "competence_id": "000a37b6-72d8-5acd-8807-77b03691b502",
+      "code": "4.6",
+      "title": "Les apprenant.e.s collaborent grâce aux interactions entre pairs.",
+      "type": "FME",
+      "scale": 3,
+      "allow_na": false,
+      "display_order": 6,
+      "tooltip_data": "{\"title\": \"4.6 Les apprenant.e.s collaborent grâce aux interactions entre pairs.\", \"subtitle\": \"\", \"items\": [{\"icon\": \"chart-down\", \"label\": \"Faible\", \"description\": \"Les apprenants ne collaborent pas OU lorsqu'ils interagissent les uns avec les autres, ils ont des comportements négatifs.\\nPar exemple :\"}, {\"icon\": \"heart-rate\", \"label\": \"Moyen\", \"description\": \"Les apprenants collaborent de manière superficielle ;\\nil peut aussi y avoir des cas minimes où les apprenants affichent des comportements négatifs (taquineries, bousculades ; intimidations, etc.) ; cependant, ces comportements sont isolés, mineurs et/ou juste pour jouer (exemple donné : aucun enfant n'est contrarié) et ne caractérisent pas globalement la salle de classe.\\nPar exemple : Les apprenants partagent le matériel entre eux au sein d'un groupe, mais ils réalisent l'activité de manière individuelle et ne collaborent pas les uns avec les autres sur les problèmes posés.\"}, {\"icon\": \"arrow-growth\", \"label\": \"Élevé\", \"description\": \"Les apprenants collaborent les uns avec les autres en travaillant ensemble pour réaliser un produit, résoudre un problème, remplir une feuille de travail ou présenter une nouvelle idée. Il n'y a aucun comportement négatif.\\nPar exemple : les apprenants travaillent en groupe pour effectuer une tâche nécessitant une collaboration, par ex. créer un diagramme du cycle de l'eau ou proposer des sketches pour illustrer un ensemble de mots de vocabulaire. Ils peuvent aussi s'entraider pour résoudre un problème de mathématiques.\"}]}"
+    }
+  ]
+}
