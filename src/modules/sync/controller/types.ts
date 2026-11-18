@@ -8,6 +8,7 @@ import { Teacher } from "../../teacher/entity/teacher.entity";
 import { Feedback } from "../../session/entity/feedback.entity";
 import { Coach } from "../../coach/entity/coach.entity";
 import { CoachSchool } from "../../coach/entity/coach-school.entity";
+import { SessionActivity } from "../../session/entity/session-activity.entity";
 
 export type DataChanges = {
   images?: Image[];
@@ -17,6 +18,7 @@ export type DataChanges = {
   sessions?: Session[];
   answers?: Answer[];
   feedbacks?: Feedback[];
+  sessionActivities?: SessionActivity[];
 };
 
 export type DataToSync = {
@@ -38,5 +40,6 @@ export type SyncData = {
   teachers: Teacher[];
   feedbacks: Feedback[];
   answers: Answer[];
+  sessionActivities: SessionActivity[];
   total: number;
 };

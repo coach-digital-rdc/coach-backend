@@ -13,6 +13,7 @@ import { Question } from "../../question/entity/question.entity";
 import { CoachSchool } from "../../coach/entity/coach-school.entity";
 import { CompetenceService } from "../../competencies/service";
 import { QuestionService } from "../../question/service";
+import { SessionActivity } from "../../session/entity/session-activity.entity";
 
 export class SyncService {
   static findAll = async (): Promise<Teacher[]> => {
@@ -40,12 +41,17 @@ export class SyncService {
       await this.saveSyncByEntity(Teacher, changes.teachers || []);
       await this.saveSyncByEntity(Session, changes.sessions || []);
       await this.saveSyncByEntity(Answer, changes.answers || []);
+      await this.saveSyncByEntity(
+        SessionActivity,
+        changes.sessionActivities || []
+      );
       await this.saveSyncByEntity(Feedback, changes.feedbacks || []);
 
       const { coaches, coachSchools } = await this.getCoachDataToSync(school);
       const teachers = await this.getDataToSync(Teacher, undefined, school);
       const sessions = await this.getDataToSync(Session, lastSync, school);
       const answers = await this.getAnswerToSync(sessions);
+      const sessionActivities = await this.getSessionActivitiesToSync(sessions);
       const feedbacks = await this.getFeedbackToSync(school, lastSync);
       const competencies = await CompetenceService.findAll();
       const questions = await QuestionService.findAll();
@@ -60,6 +66,7 @@ export class SyncService {
         sessions,
         teachers,
         answers,
+        sessionActivities,
         total:
           coaches.length +
           feedbacks.length +
@@ -92,6 +99,13 @@ export class SyncService {
 
   static getAnswerToSync = async (sessions: Session[]) => {
     const repository = await dataSource.getRepository(Answer);
+    return await repository.find({
+      where: { session_id: In(sessions.map((item) => item.id)) },
+    });
+  };
+
+  static getSessionActivitiesToSync = async (sessions: Session[]) => {
+    const repository = await dataSource.getRepository(SessionActivity);
     return await repository.find({
       where: { session_id: In(sessions.map((item) => item.id)) },
     });
