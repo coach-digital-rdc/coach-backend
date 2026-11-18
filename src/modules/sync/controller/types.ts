@@ -11,6 +11,10 @@ import { CoachSchool } from "../../coach/entity/coach-school.entity";
 import { SessionActivity } from "../../session/entity/session-activity.entity";
 import { ObservationNote } from "../../session/entity/observation-note.entity";
 import { CompetenceScore } from "../../session/entity/competence-score.entity";
+import { Pdp } from "../../pdp/entity/pdp.entity";
+import { PdpObjective } from "../../pdp/entity/pdp-objective.entity";
+import { PdpRuleSet } from "../../pdp/entity/pdp-rule-set.entity";
+import { PdpLibraryItem } from "../../pdp/entity/pdp-library-item.entity";
 import { Documentation } from "../../session/entity/documentation.entity";
 import { ChecklistItem } from "../../session/entity/checklist-item.entity";
 
@@ -26,6 +30,8 @@ export type DataChanges = {
   documentations?: Documentation[];
   observationNotes?: ObservationNote[];
   competenceScores?: CompetenceScore[];
+  pdps?: Pdp[];
+  pdpObjectives?: PdpObjective[];
 };
 
 export type DataToSync = {
@@ -51,6 +57,10 @@ export type SyncData = {
   documentations: Documentation[];
   observationNotes: ObservationNote[];
   competenceScores: CompetenceScore[];
+  pdps: Pdp[];
+  pdpObjectives: PdpObjective[];
+  pdpRuleSets: PdpRuleSet[];
+  pdpLibraryItems: PdpLibraryItem[];
   checklistItems: ChecklistItem[];
   total: number;
 };

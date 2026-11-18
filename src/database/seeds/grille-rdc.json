@@ -1,5 +1,5 @@
 {
-  "source": "Annexe B (libellés de la grille et des 15 documents de la checklist) et annexe C (descriptions F/M/E) des TDR, outil papier RDC",
+  "source": "Annexe B (libellés de la grille et des 15 documents de la checklist) et annexe C (descriptions F/M/E) des TDR, outil papier RDC ; règles PDP version 1 et bibliothèque d'objectifs validées par le SERNAFOR",
   "competences": [
     {
       "id": "2346916b-e327-54c1-b29a-4277f7cf2f22",
@@ -509,5 +509,271 @@
       "statement": "Les apprenant.e.s utilisent le cahier de communication pour favoriser le contact entre l'école et les parents.",
       "display_order": 15
     }
-  ]
+  ],
+  "pdp": {
+    "rule_set": {
+      "id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+      "version": 1,
+      "status": "PUBLISHED",
+      "max_objectives": 3,
+      "published_at": "2026-10-15T00:00:00.000Z",
+      "diagnostic_config": {
+        "strength": [
+          "HIGH",
+          "YES"
+        ],
+        "consolidate": [
+          "MEDIUM"
+        ],
+        "priority": [
+          "LOW",
+          "NO"
+        ],
+        "priority_threshold": 2,
+        "due_in_days": 42
+      }
+    },
+    "library": [
+      {
+        "id": "b8ae6a28-ac2b-517a-90e1-b36e8656b863",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "fa42f2c2-355b-552d-89fb-731341cb4c9e",
+        "objective": "Proposer une activité d'apprentissage à l'ensemble de la classe.",
+        "actions": "Prévoir une tâche pour chaque groupe dès le début de la séquence\nVérifier en circulant que chaque apprenant.e a une tâche",
+        "indicator": "Au moins 2/3 des apprenant.e.s en activité lors de la prochaine observation"
+      },
+      {
+        "id": "6c04bf5a-48b8-553b-b677-2c20cc88ef9b",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "db0d910e-5ba2-5f41-8e0f-46ce8e28fd17",
+        "objective": "Maintenir les apprenant.e.s concentré.e.s sur leur tâche.",
+        "actions": "Annoncer la durée de chaque activité\nCirculer dans les rangs pendant le travail individuel",
+        "indicator": "Moins de 5 apprenant.e.s inactif.ve.s pendant les activités"
+      },
+      {
+        "id": "19f34635-b687-58be-a98f-7e2a6e26b43d",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "34021e91-b605-5b5e-8ed1-b4fe927a1339",
+        "objective": "Faire participer activement les apprenant.e.s aux tâches d'apprentissage.",
+        "actions": "Interroger des apprenant.e.s qui ne lèvent pas la main\nAlterner travail individuel, en binôme et en groupe",
+        "indicator": "La majorité des apprenant.e.s interviennent au moins une fois par séquence"
+      },
+      {
+        "id": "45bfacc8-8df3-5ae6-8746-081f9e09e4eb",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "7ad84908-2122-58b1-880f-9d680fa0d4a8",
+        "objective": "Renforcer le respect dans les échanges avec les apprenant.e.s.",
+        "actions": "Appeler les apprenant.e.s par leur nom\nÉcouter les réponses jusqu'au bout",
+        "indicator": "Aucune remarque blessante relevée lors de l'observation"
+      },
+      {
+        "id": "97f61671-edc8-52b1-9767-6235b0135cf3",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "89a39509-e0d0-5a79-bd64-6f12088bbef7",
+        "objective": "Utiliser un langage positif avec les apprenant.e.s.",
+        "actions": "Formuler les consignes de manière positive\nValoriser les essais, même incorrects",
+        "indicator": "Langage positif relevé dans les notes d'observation"
+      },
+      {
+        "id": "efb47e99-3452-58ba-b374-41d63a98e5f5",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "42bc1669-731f-591f-aba3-673d0bd1bc4b",
+        "objective": "Mieux répondre aux besoins des apprenant.e.s.",
+        "actions": "Repérer les apprenant.e.s en difficulté en début de séquence\nPrévoir un temps d'aide individuelle",
+        "indicator": "Les apprenant.e.s qui demandent de l'aide sont pris.es en charge"
+      },
+      {
+        "id": "c37386e7-e31b-5ea0-9e1e-bfefeb16da3d",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "eb7e82f4-99b2-5c99-aafc-170aec2a7538",
+        "objective": "Tenir compte de la diversité des apprenant.e.s.",
+        "actions": "Varier la composition des groupes (filles, garçons, niveaux)\nDonner la parole autant aux filles qu'aux garçons",
+        "indicator": "Répartition équilibrée de la parole entre filles et garçons"
+      },
+      {
+        "id": "64535e06-2f56-5254-bff8-95d87c9a0821",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "844dadba-5715-5269-9e32-badac99681a4",
+        "objective": "Définir des attentes comportementales claires.",
+        "actions": "Afficher trois règles de classe simples\nRappeler les attentes avant chaque activité",
+        "indicator": "Les apprenant.e.s savent citer les règles de la classe"
+      },
+      {
+        "id": "5c22ac03-a6c7-5f50-ba03-c917f759664b",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "e9c16d82-6bce-5a7a-9c1f-fd141f0ee72a",
+        "objective": "Reconnaître les comportements positifs.",
+        "actions": "Féliciter publiquement un comportement attendu\nNoter les comportements positifs de la semaine",
+        "indicator": "Au moins trois renforcements positifs par séquence"
+      },
+      {
+        "id": "2875418a-8dea-5c6b-b15c-e39469547a74",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "081bcf68-dd3c-5579-aacf-4660d0790812",
+        "objective": "Réorienter le mauvais comportement vers le comportement attendu.",
+        "actions": "Rappeler calmement la règle concernée\nS'approcher de l'apprenant.e plutôt que de hausser le ton",
+        "indicator": "Les écarts de comportement sont réorientés sans interrompre la classe"
+      },
+      {
+        "id": "7f21fd70-eeb3-5ef4-85ab-9bb4a0104d45",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "fe9fded6-407d-5ec6-8259-ce0463028c31",
+        "objective": "Adapter l'apprentissage au niveau et au milieu des apprenant.e.s.",
+        "actions": "Commencer par un rappel des prérequis\nUtiliser des exemples tirés du milieu des apprenant.e.s",
+        "indicator": "Fiche de préparation indiquant les adaptations prévues"
+      },
+      {
+        "id": "82073607-53d9-58a9-ace5-da9e164f4629",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "ff5a1b20-d342-541e-b3ca-7a35c81464de",
+        "objective": "Clarifier les problèmes de compréhension par des commentaires précis.",
+        "actions": "Reformuler l'erreur et expliquer pourquoi elle est fausse\nProposer un exemple complémentaire",
+        "indicator": "Les erreurs relevées sont corrigées avec une explication"
+      },
+      {
+        "id": "30913e16-ff2b-51d1-9511-6c441c0929ab",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "a4639c7e-a106-5a70-8470-69a070526b99",
+        "objective": "Offrir des choix aux apprenant.e.s.",
+        "actions": "Proposer deux exercices au choix de difficulté différente\nLaisser le groupe choisir sa méthode de présentation",
+        "indicator": "Au moins une activité au choix par séquence"
+      },
+      {
+        "id": "c8bcef61-7b5d-5494-a0fe-6d06f66bf86a",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "959caef7-598e-5b27-b290-dc6c14faf011",
+        "objective": "Relier les contenus à la vie courante des apprenant.e.s.",
+        "actions": "Introduire la leçon par une situation de la vie quotidienne\nDemander aux apprenant.e.s leurs propres exemples",
+        "indicator": "Situation de vie courante présente dans la fiche de préparation"
+      },
+      {
+        "id": "a254ca08-ddef-57bb-8fed-cb6d8d551795",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "8f5aec3a-d89b-5cdf-b0a7-54a7bd0c028e",
+        "objective": "Énoncer clairement les objectifs de la séquence.",
+        "actions": "Écrire l'objectif au tableau en début de séquence\nRevenir sur l'objectif en fin de séquence",
+        "indicator": "Objectif écrit au tableau à chaque séquence"
+      },
+      {
+        "id": "1c9d9d58-04a6-556f-88fc-6661426301e9",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "c287fbcd-b8fd-59f3-a7f9-0d9ad9bd0b73",
+        "objective": "Faire davantage de démonstrations.",
+        "actions": "Préparer un matériel de manipulation simple\nRésoudre un exemple à haute voix devant la classe",
+        "indicator": "Au moins une démonstration par séquence"
+      },
+      {
+        "id": "84973d89-fd30-509b-86b7-9dbba96beb58",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "0d998e4c-a3d6-5729-9839-f4a296f4bdfe",
+        "objective": "Vérifier régulièrement le niveau de compréhension des apprenant.e.s.",
+        "actions": "Poser des questions de vérification à des moments prévus\nUtiliser les ardoises pour des réponses de toute la classe",
+        "indicator": "Trois moments de vérification prévus dans la fiche de préparation"
+      },
+      {
+        "id": "0540c59f-8d80-5189-9457-0db7d2e2ee34",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "f63996bf-0f9d-507d-bc06-dddb47198e31",
+        "objective": "Suivre les apprenant.e.s pendant le travail individuel ou de groupe.",
+        "actions": "Circuler entre les groupes pendant le travail\nPrévoir une tâche d'approfondissement pour ceux qui ont terminé",
+        "indicator": "Tâche d'approfondissement disponible à chaque activité"
+      },
+      {
+        "id": "77038ecf-eb55-5aaa-81e5-b7d2c0676975",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "731adc9f-bff3-5a08-b6e3-746174457498",
+        "objective": "Confirmer les bonnes réponses par des commentaires précis.",
+        "actions": "Expliquer pourquoi une réponse est juste\nFaire reformuler la bonne réponse par un.e autre apprenant.e",
+        "indicator": "Les bonnes réponses sont commentées et non seulement validées"
+      },
+      {
+        "id": "8380add0-33ec-5fef-ac23-60b86b408b93",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "c8532f1d-6e26-5b1c-b233-ad43593026c6",
+        "objective": "Expliquer le contenu à l'aide de plusieurs représentations.",
+        "actions": "Associer schéma, exemple concret et formule\nUtiliser le tableau et le matériel disponible",
+        "indicator": "Au moins deux formes de représentation par notion"
+      },
+      {
+        "id": "56f2cae4-19c5-5b47-8558-c301859bfb11",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "34f6a6a8-d0ce-5964-ab84-120a66be256b",
+        "objective": "Inciter les apprenant.e.s aux questions ouvertes et à la réflexion.",
+        "actions": "Poser des questions « pourquoi » et « comment »\nLaisser un temps de réflexion avant d'interroger",
+        "indicator": "Au moins deux questions ouvertes par séquence"
+      },
+      {
+        "id": "d72026be-ed0c-5665-aab6-0f86e78a3055",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "2fcc686c-3bc2-5cf4-93b4-6437eb1b3b3a",
+        "objective": "Amener les apprenant.e.s à répondre aux questions pendant le travail.",
+        "actions": "Interroger chaque groupe pendant l'activité\nEncourager les réponses partielles",
+        "indicator": "Chaque groupe répond au moins une fois"
+      },
+      {
+        "id": "5a854665-faa1-5eba-a46d-921d9dfd5f7f",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "2a86f0d1-7c77-5c13-bfa2-6852ac5f3b9f",
+        "objective": "Encourager les apprenant.e.s à se porter volontaires.",
+        "actions": "Valoriser les apprenant.e.s qui se proposent\nCréer des rôles tournants (rapporteur, secrétaire)",
+        "indicator": "Au moins cinq volontaires différents par séquence"
+      },
+      {
+        "id": "9ad2f8d7-486e-53bc-80d2-dc67ef445f0f",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "071b9b4d-07f5-56e6-a3d6-bff0fe736e4c",
+        "objective": "Garder les apprenant.e.s engagé.e.s dans leurs tâches.",
+        "actions": "Donner des consignes courtes et écrites\nFixer un temps pour chaque tâche",
+        "indicator": "Les tâches sont terminées dans le temps prévu"
+      },
+      {
+        "id": "5371c121-4474-5ea1-9849-75dc702da6d2",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "71c1dd4b-03ff-5eec-9758-42f6c57df3b2",
+        "objective": "Reconnaître les efforts des apprenant.e.s.",
+        "actions": "Féliciter la démarche et pas seulement le résultat\nCommenter les progrès individuels",
+        "indicator": "Commentaires sur les efforts relevés lors de l'observation"
+      },
+      {
+        "id": "bab5bef8-c67c-570d-b4e9-6a6d5f9d20e0",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "b33d8753-591c-571c-96b8-481a94d8961e",
+        "objective": "Adopter une attitude positive face aux difficultés.",
+        "actions": "Présenter l'erreur comme une étape d'apprentissage\nEncourager l'apprenant.e à réessayer",
+        "indicator": "Aucune réaction négative face aux erreurs"
+      },
+      {
+        "id": "b9460a93-1d6f-55f8-8ed8-5169e851e1aa",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "d5dabce5-e0bb-545b-b7ab-e32187b2e81c",
+        "objective": "Encourager les apprenant.e.s à se fixer et atteindre des objectifs.",
+        "actions": "Faire formuler à chaque apprenant.e un objectif de la semaine\nFaire le point sur ces objectifs en fin de semaine",
+        "indicator": "Objectifs individuels notés dans le cahier de l'apprenant.e"
+      },
+      {
+        "id": "bb562974-f23b-5065-bc3f-90116773b271",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "2cef1c36-75b5-5778-bfd2-627af4a2f534",
+        "objective": "Encourager la collaboration entre pairs.",
+        "actions": "Organiser au moins une activité en binôme ou en groupe par séquence\nAttribuer un rôle à chaque membre du groupe",
+        "indicator": "Une activité de groupe par séquence dans la fiche de préparation"
+      },
+      {
+        "id": "47ad0081-f2ce-5d94-bbaf-78f21876529d",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "5406b969-2875-5754-96be-e32125e13fbd",
+        "objective": "Développer les compétences interpersonnelles des apprenant.e.s.",
+        "actions": "Enseigner les règles d'écoute et de prise de parole en groupe\nFaire présenter le travail du groupe par un.e rapporteur.e",
+        "indicator": "Les règles de travail en groupe sont affichées et appliquées"
+      },
+      {
+        "id": "fd17bca7-cb51-5362-b092-604b3f5cd024",
+        "rule_set_id": "948f248e-7d7d-56bf-9e97-647004b6f025",
+        "question_id": "8195fb5e-e64d-588e-ab11-2a11bd2e2f1d",
+        "objective": "Faire collaborer les apprenant.e.s entre pairs.",
+        "actions": "Proposer des tâches qui demandent l'apport de chacun\nFaire évaluer le travail du groupe par les pairs",
+        "indicator": "Les apprenant.e.s s'entraident pendant les activités"
+      }
+    ]
+  }
 }

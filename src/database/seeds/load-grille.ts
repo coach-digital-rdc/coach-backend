@@ -9,6 +9,8 @@ import dataSource from "../config/ormconfig";
 import { Competence } from "../../modules/competencies/entity/competence.entity";
 import { Question } from "../../modules/question/entity/question.entity";
 import { ChecklistItem } from "../../modules/session/entity/checklist-item.entity";
+import { PdpRuleSet } from "../../modules/pdp/entity/pdp-rule-set.entity";
+import { PdpLibraryItem } from "../../modules/pdp/entity/pdp-library-item.entity";
 
 const [fileName, option] = process.argv.slice(2);
 
@@ -23,6 +25,7 @@ const grid: {
   competences: Competence[];
   questions: Question[];
   checklist?: ChecklistItem[];
+  pdp?: { rule_set: PdpRuleSet; library: PdpLibraryItem[] };
 } = JSON.parse(
   fs.readFileSync(path.join(__dirname, fileName), "utf8"),
 );
@@ -59,6 +62,23 @@ dataSource
         })),
       );
 
+      // PDP rules and objectives library (B18), when the file has them
+      if (grid.pdp) {
+        await manager.save(PdpRuleSet, {
+          ...grid.pdp.rule_set,
+          updated_at: now,
+          deleted_at: null as any,
+        });
+        await manager.save(
+          PdpLibraryItem,
+          grid.pdp.library.map((item) => ({
+            ...item,
+            updated_at: now,
+            deleted_at: null as any,
+          })),
+        );
+      }
+
       if (option === "--replace") {
         await manager.update(
           Question,
@@ -79,7 +99,7 @@ dataSource
       }
     });
     console.log(
-      `Grid ${fileName} loaded: ${grid.competences.length} sub-domains, ${grid.questions.length} behaviours, ${grid.checklist?.length || 0} checklist documents.`,
+      `Grid ${fileName} loaded: ${grid.competences.length} sub-domains, ${grid.questions.length} behaviours, ${grid.checklist?.length || 0} checklist documents, ${grid.pdp?.library.length || 0} PDP objectives.`,
     );
     await dataSource.destroy();
   })

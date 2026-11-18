@@ -16,6 +16,10 @@ import { QuestionService } from "../../question/service";
 import { SessionActivity } from "../../session/entity/session-activity.entity";
 import { ObservationNote } from "../../session/entity/observation-note.entity";
 import { CompetenceScore } from "../../session/entity/competence-score.entity";
+import { Pdp } from "../../pdp/entity/pdp.entity";
+import { PdpObjective } from "../../pdp/entity/pdp-objective.entity";
+import { PdpRuleSet } from "../../pdp/entity/pdp-rule-set.entity";
+import { PdpLibraryItem } from "../../pdp/entity/pdp-library-item.entity";
 import { Documentation } from "../../session/entity/documentation.entity";
 import { ChecklistItem } from "../../session/entity/checklist-item.entity";
 
@@ -59,6 +63,12 @@ export class SyncService {
         CompetenceScore,
         changes.competenceScores || []
       );
+      await this.saveSyncByEntity(Pdp, changes.pdps || []);
+      await this.saveSyncByEntity(
+        PdpObjective,
+        changes.pdpObjectives || [],
+        true
+      );
       await this.saveSyncByEntity(Feedback, changes.feedbacks || []);
 
       const { coaches, coachSchools } = await this.getCoachDataToSync(school);
@@ -67,6 +77,8 @@ export class SyncService {
       const answers = await this.getAnswerToSync(sessions);
       const sessionActivities = await this.getSessionActivitiesToSync(sessions);
       const documentations = await this.getDocumentationsToSync(sessions);
+      const { pdps, pdpObjectives, pdpRuleSets, pdpLibraryItems } =
+        await this.getPdpToSync(sessions);
       const competenceScores = await dataSource
         .getRepository(CompetenceScore)
         .find({ where: { session_id: In(sessions.map((item) => item.id)) } });
@@ -94,6 +106,10 @@ export class SyncService {
         documentations,
         observationNotes,
         competenceScores,
+        pdps,
+        pdpObjectives,
+        pdpRuleSets,
+        pdpLibraryItems,
         checklistItems,
         total:
           coaches.length +
@@ -139,6 +155,28 @@ export class SyncService {
     return await repository.find({
       where: { session_id: In(sessions.map((item) => item.id)) },
     });
+  };
+
+  // Plans of the sessions, and the published rules that the devices apply offline
+  static getPdpToSync = async (sessions: Session[]) => {
+    const pdps = await dataSource.getRepository(Pdp).find({
+      where: { session_id: In(sessions.map((item) => item.id)) },
+    });
+    const pdpObjectives = await dataSource.getRepository(PdpObjective).find({
+      where: { pdp_id: In(pdps.map((item) => item.id)) },
+    });
+    const pdpRuleSets = await dataSource.getRepository(PdpRuleSet).find({
+      where: { status: "PUBLISHED", deleted_at: IsNull() },
+    });
+    const pdpLibraryItems = await dataSource
+      .getRepository(PdpLibraryItem)
+      .find({
+        where: {
+          rule_set_id: In(pdpRuleSets.map((item) => item.id)),
+          deleted_at: IsNull(),
+        },
+      });
+    return { pdps, pdpObjectives, pdpRuleSets, pdpLibraryItems };
   };
 
   static getDocumentationsToSync = async (sessions: Session[]) => {
