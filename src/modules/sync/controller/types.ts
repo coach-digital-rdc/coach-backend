@@ -11,6 +11,7 @@ import { CoachSchool } from "../../coach/entity/coach-school.entity";
 import { SessionActivity } from "../../session/entity/session-activity.entity";
 import { ObservationNote } from "../../session/entity/observation-note.entity";
 import { CompetenceScore } from "../../session/entity/competence-score.entity";
+import { TlcEvaluation } from "../../tlc/entity/tlc-evaluation.entity";
 import { SessionSignature } from "../../session/entity/session-signature.entity";
 import { Pdp } from "../../pdp/entity/pdp.entity";
 import { PdpObjective } from "../../pdp/entity/pdp-objective.entity";
@@ -33,6 +34,7 @@ export type DataChanges = {
   competenceScores?: CompetenceScore[];
   pdps?: Pdp[];
   sessionSignatures?: SessionSignature[];
+  tlcEvaluations?: TlcEvaluation[];
   pdpObjectives?: PdpObjective[];
 };
 
