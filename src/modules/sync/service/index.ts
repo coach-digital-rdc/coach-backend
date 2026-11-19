@@ -16,6 +16,7 @@ import { QuestionService } from "../../question/service";
 import { SessionActivity } from "../../session/entity/session-activity.entity";
 import { ObservationNote } from "../../session/entity/observation-note.entity";
 import { CompetenceScore } from "../../session/entity/competence-score.entity";
+import { TlcEvaluation } from "../../tlc/entity/tlc-evaluation.entity";
 import { SessionSignature } from "../../session/entity/session-signature.entity";
 import { Pdp } from "../../pdp/entity/pdp.entity";
 import { PdpObjective } from "../../pdp/entity/pdp-objective.entity";
@@ -65,6 +66,10 @@ export class SyncService {
         changes.competenceScores || []
       );
       await this.saveSyncByEntity(Pdp, changes.pdps || []);
+      await this.saveSyncByEntity(
+        TlcEvaluation,
+        changes.tlcEvaluations || []
+      );
       await this.saveSyncByEntity(
         SessionSignature,
         changes.sessionSignatures || []

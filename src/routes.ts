@@ -36,14 +36,23 @@ const Routes = {
     competenceRouter(app);
     logRouter(app);
 
-    app.get(`/${config.country}/api/`, (_req: Request, res: Response) => {
+    // Versions of the mobile application, read by the app at start-up (B28)
+    app.get(`/api/app/version`, (_req: Request, res: Response) => {
+      res.send({
+        latest_version: config.app.latestVersion || null,
+        min_version: config.app.minVersion || null,
+        download_url: config.app.downloadUrl || null,
+      });
+    });
+
+    app.get(`/api/`, (_req: Request, res: Response) => {
       res.send(
-        `Coach API ${config.country} v${packageJson?.version} is running.`
+        `Coach Digital RDC API v${packageJson?.version} is running.`
       );
     });
 
     app.use(
-      `/${config.country}/api/docs`,
+      `/api/docs`,
       swaggerUi.serve,
       swaggerUi.setup(swaggerOptions)
     );

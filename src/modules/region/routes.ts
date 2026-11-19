@@ -1,36 +1,35 @@
 import { Application } from "express";
 import Authentication from "../auth/service";
 import RegionController from "./controller";
-import config from "../../config";
 
 const schoolRouter = (app: Application): void => {
   app.post(
-    `/${config.country}/api/region`,
+    `/api/region`,
     Authentication.authenticate,
     RegionController.save
   );
   app.delete(
-    `/${config.country}/api/region/:id`,
+    `/api/region/:id`,
     Authentication.authenticate,
     RegionController.delete
   );
   app.get(
-    `/${config.country}/api/region`,
+    `/api/region`,
     Authentication.authenticate,
     RegionController.findAll
   );
   app.get(
-    `/${config.country}/api/region/tree`,
+    `/api/region/tree`,
     Authentication.authenticate,
     RegionController.findAllTree
   );
   app.get(
-    `/${config.country}/api/region/:id`,
+    `/api/region/:id`,
     Authentication.authenticate,
     RegionController.findById
   );
   app.post(
-    `/${config.country}/api/region/batch`,
+    `/api/region/batch`,
     Authentication.authenticate,
     RegionController.createBatch
   );

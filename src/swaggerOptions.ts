@@ -1,14 +1,28 @@
-import config from "./config";
 
 const packageJson: any = require("../package.json");
 
 export default {
   openapi: "3.0.1",
   info: {
-    title: `REST API for Coach digital ${config.country?.toUpperCase()}`,
+    title: "REST API for Coach Digital RDC",
     version: packageJson?.version,
   },
+  // Every route is served under /api
+  servers: [{ url: "/api" }],
   paths: {
+    "/app/version": {
+      get: {
+        tags: ["App"],
+        summary:
+          "Latest and minimum versions of the mobile application, with the download link (B28)",
+        responses: {
+          200: {
+            description:
+              "latest_version, min_version and download_url, each empty when not set",
+          },
+        },
+      },
+    },
     "/auth": {
       post: {
         tags: ["Auth"],

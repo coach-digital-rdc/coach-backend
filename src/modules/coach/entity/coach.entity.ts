@@ -35,6 +35,21 @@ export class Coach {
   @Column({ nullable: true })
   image_id?: string;
 
+  // Profile of the observer, shown in the header of the observation sheet (B21)
+  @Column({ nullable: true })
+  sex?: string;
+
+  // INSPECTOR, ADVISOR, SCHOOL_HEAD or PEER
+  @Column({ nullable: true })
+  function?: string;
+
+  // Duty station, or area of intervention of an inspector or an advisor
+  @Column({ nullable: true })
+  duty_station?: string;
+
+  @Column({ nullable: true })
+  postal_box?: string;
+
   @OneToMany(() => CoachSchool, (coachSchool) => coachSchool.coach)
   coachSchools?: CoachSchool[];
 

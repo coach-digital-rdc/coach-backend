@@ -43,6 +43,14 @@ export class Session {
   @Column({ nullable: true })
   last_observation_rating?: string;
 
+  // Appreciation of this observation (B11): suggested from the global scores, then kept or
+  // changed by the observer. VERY_GOOD, GOOD, FAIRLY_GOOD, INSUFFICIENT or WEAK
+  @Column({ nullable: true })
+  suggested_appreciation?: string;
+
+  @Column({ nullable: true })
+  appreciation?: string;
+
   @Column({ nullable: true })
   observer_function?: string;
 
