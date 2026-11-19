@@ -15,6 +15,7 @@ import coachRouter from "./modules/coach/routes";
 import imageRouter from "./modules/image/routes";
 import logRouter from "./modules/logs/routes";
 import dashboardRouter from "./modules/dashboard/routes";
+import config from "./config";
 
 const packageJson: any = require("../package.json");
 
@@ -34,6 +35,15 @@ const Routes = {
     dashboardRouter(app);
     competenceRouter(app);
     logRouter(app);
+
+    // Versions of the mobile application, read by the app at start-up (B28)
+    app.get(`/api/app/version`, (_req: Request, res: Response) => {
+      res.send({
+        latest_version: config.app.latestVersion || null,
+        min_version: config.app.minVersion || null,
+        download_url: config.app.downloadUrl || null,
+      });
+    });
 
     app.get(`/api/`, (_req: Request, res: Response) => {
       res.send(

@@ -16,6 +16,13 @@ const config = {
 
   secret: process.env.JWT_SECRET || "",
 
+  // Versions of the mobile application checked at start-up (B28)
+  app: {
+    latestVersion: process.env.APP_LATEST_VERSION || "",
+    minVersion: process.env.APP_MIN_VERSION || "",
+    downloadUrl: process.env.APP_DOWNLOAD_URL || "",
+  },
+
   salt: process.env.PASSWORD_SALT || "",
 
   database: {
