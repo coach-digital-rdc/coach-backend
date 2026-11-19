@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { constants } from "http2";
 import { SessionService } from "../service";
 import { RegionService } from "../../region/service";
+import { getScopedRegionIds } from "../../helpers/scope";
 
 const {
   HTTP_STATUS_OK,
@@ -47,22 +48,43 @@ export default class SessionController {
     }
   };
 
-  public static findAll = async (req: Request, res: Response): Promise<any> => {
+  public static findAll = async (
+    req: Request<any, any, any, { regionId?: string }>,
+    res: Response
+  ): Promise<any> => {
     try {
-      let list = [];
-      if (res.locals?.authUser?.region_id) {
-        const regions = await RegionService.getChildren(
-          res.locals?.authUser.region_id
-        );
-
-        list = await SessionService.findAll(
-          regions.map((item) => `${item.id}`)
-        );
-      } else {
-        list = await SessionService.findAll();
-      }
+      const regionIds = await getScopedRegionIds(res, req.query.regionId);
+      const list = await SessionService.findAll(regionIds);
 
       return res.status(HTTP_STATUS_OK).send(list);
+    } catch (error) {
+      res.status(HTTP_STATUS_INTERNAL_SERVER_ERROR).send({
+        error: HTTP_STATUS_INTERNAL_SERVER_ERROR,
+        message: (error as any).message,
+      });
+    }
+  };
+
+  public static findDetails = async (
+    req: Request,
+    res: Response
+  ): Promise<any> => {
+    try {
+      const details = await SessionService.findDetails(req.params.id);
+      const regionIds = await getScopedRegionIds(res);
+
+      if (
+        !details ||
+        (regionIds &&
+          !regionIds.includes(`${details.session.school?.region_id}`))
+      ) {
+        return res.status(HTTP_STATUS_NOT_FOUND).send({
+          error: HTTP_STATUS_NOT_FOUND,
+          message: "Object not found",
+        });
+      }
+
+      return res.status(HTTP_STATUS_OK).send(details);
     } catch (error) {
       res.status(HTTP_STATUS_INTERNAL_SERVER_ERROR).send({
         error: HTTP_STATUS_INTERNAL_SERVER_ERROR,

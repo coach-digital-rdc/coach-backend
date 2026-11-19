@@ -23,6 +23,417 @@ export default {
         },
       },
     },
+    "/dashboard/rdc": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "summary": "Dashboard of the DRC version (B26): totals, by function of the observer, by area, scores by sub-domain, appreciations, months, behaviours most targeted by the PDPs, checklist, learning circles",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "regionId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Region and its sub-regions; its sub-regions are the areas"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ISO date"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ISO date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Indicators of the sessions in the scope of the user"
+          }
+        }
+      }
+    },
+    "/session/{id}/details": {
+      "get": {
+        "tags": [
+          "Session"
+        ],
+        "summary": "Everything a session holds: header, activities, answers, global scores, checklist, notes, signatures (SVG) and PDP",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of the session"
+          }
+        }
+      }
+    },
+    "/checklist-items": {
+      "get": {
+        "tags": [
+          "Checklist"
+        ],
+        "summary": "Documents of the checklist (B12)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/checklist-items/{id}": {
+      "put": {
+        "tags": [
+          "Checklist"
+        ],
+        "summary": "Corrects the wording of a document; the devices receive it at their next synchronisation (administrators only)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "document_name": {
+                    "type": "string"
+                  },
+                  "statement": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "403": {
+            "description": "Reserved to the administrators"
+          }
+        }
+      }
+    },
+    "/pdp/rule-sets": {
+      "get": {
+        "tags": [
+          "PDP rules"
+        ],
+        "summary": "Versions of the PDP rules (B19), most recent first",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PDP rules"
+        ],
+        "summary": "Prepares a draft from a version (the published one by default); one draft at a time (administrators only)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "from_id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "403": {
+            "description": "Reserved to the administrators"
+          }
+        }
+      }
+    },
+    "/pdp/rule-sets/{id}": {
+      "get": {
+        "tags": [
+          "PDP rules"
+        ],
+        "summary": "A version with its library of objectives",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PDP rules"
+        ],
+        "summary": "Changes a draft: categories of the answers, threshold, due date, number of objectives and library (the whole library is sent) (administrators only)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "diagnostic_config": {
+                    "type": "object",
+                    "properties": {
+                      "strength": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "consolidate": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "priority": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "priority_threshold": {
+                        "type": "number"
+                      },
+                      "due_in_days": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "max_objectives": {
+                    "type": "number"
+                  },
+                  "library": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "question_id": {
+                          "type": "string"
+                        },
+                        "objective": {
+                          "type": "string"
+                        },
+                        "actions": {
+                          "type": "string",
+                          "description": "One action per line"
+                        },
+                        "indicator": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "403": {
+            "description": "Reserved to the administrators"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PDP rules"
+        ],
+        "summary": "Deletes a draft (administrators only)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "403": {
+            "description": "Reserved to the administrators"
+          }
+        }
+      }
+    },
+    "/pdp/rule-sets/{id}/publish": {
+      "post": {
+        "tags": [
+          "PDP rules"
+        ],
+        "summary": "Publishes a draft; the published version becomes archived and the devices receive the new one at their next synchronisation (administrators only)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "403": {
+            "description": "Reserved to the administrators"
+          }
+        }
+      }
+    },
+    "/tlc-evaluations": {
+      "get": {
+        "tags": [
+          "Learning circles"
+        ],
+        "summary": "Learning circles sent by the devices (B22)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "regionId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Region and its sub-regions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/auth": {
       post: {
         tags: ["Auth"],
