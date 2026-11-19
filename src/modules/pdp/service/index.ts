@@ -2,6 +2,7 @@ import { IsNull } from "typeorm";
 import dataSource from "../../../database/config/ormconfig";
 import { PdpRuleSet } from "../entity/pdp-rule-set.entity";
 import { PdpLibraryItem } from "../entity/pdp-library-item.entity";
+import { User } from "../../user/entity/user.entity";
 
 export type LibraryInput = {
   question_id: string;
@@ -83,7 +84,12 @@ export class PdpRuleSetService {
     const library = await dataSource.getRepository(PdpLibraryItem).find({
       where: { rule_set_id: id, deleted_at: IsNull() },
     });
-    return { ...ruleSet, library };
+    const publisher = ruleSet.published_by
+      ? await dataSource
+          .getRepository(User)
+          .findOne({ where: { id: ruleSet.published_by } })
+      : null;
+    return { ...ruleSet, published_by_name: publisher?.name || null, library };
   };
 
   static createDraft = async (fromId?: string) => {
