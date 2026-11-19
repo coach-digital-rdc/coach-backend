@@ -26,11 +26,16 @@ import { Documentation } from "../../session/entity/documentation.entity";
 import { ChecklistItem } from "../../session/entity/checklist-item.entity";
 
 export class SyncService {
-  static findAll = async (): Promise<Teacher[]> => {
-    const userRepository = await dataSource.getRepository(Sync);
-
-    return userRepository.find();
-  };
+  // Each device once, with its last synchronisation and the number of synchronisations
+  static findAll = async (): Promise<any[]> =>
+    dataSource.query(
+      `SELECT DISTINCT ON ("deviceId") id, model, "deviceId", "apiLevel",
+              COALESCE("lastPulledAt", created_at) AS "lastPulledAt",
+              COUNT(*) OVER (PARTITION BY "deviceId")::int AS count
+         FROM sync
+        WHERE deleted_at IS NULL
+        ORDER BY "deviceId", COALESCE("lastPulledAt", created_at) DESC NULLS LAST`
+    );
 
   static sync = async (
     { apiLevel, deviceId, lastPulledAt, model, changes, lastSync }: DataToSync,
@@ -38,11 +43,15 @@ export class SyncService {
   ): Promise<SyncData> => {
     const syncRepository = await dataSource.getRepository(Sync);
     try {
+      // Time of the synchronisation, read by the administration
+      const now = new Date();
       await syncRepository.save({
         apiLevel,
         deviceId,
-        lastPulledAt,
+        lastPulledAt: now,
         model,
+        created_at: now,
+        updated_at: now,
       });
 
       await this.saveSyncByEntity(Coach, changes.coaches || []);

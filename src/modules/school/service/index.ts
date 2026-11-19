@@ -137,14 +137,18 @@ export class SchoolService {
 
   static findAll = async (regionIds?: string[]): Promise<School[]> => {
     const schoolRepository = await dataSource.getRepository(School);
+    // The region and its parents name the place of the school in the administration
+    const relations = { region: { parent: { parent: true } } };
     if (!regionIds) {
-      return schoolRepository.find();
+      return schoolRepository.find({ relations, order: { name: "ASC" } });
     }
 
     return schoolRepository.find({
       where: {
         region_id: In(regionIds),
       },
+      relations,
+      order: { name: "ASC" },
     });
   };
 

@@ -15,6 +15,8 @@ import coachRouter from "./modules/coach/routes";
 import imageRouter from "./modules/image/routes";
 import logRouter from "./modules/logs/routes";
 import dashboardRouter from "./modules/dashboard/routes";
+import pdpRouter from "./modules/pdp/routes";
+import tlcRouter from "./modules/tlc/routes";
 import config from "./config";
 
 const packageJson: any = require("../package.json");
@@ -35,6 +37,8 @@ const Routes = {
     dashboardRouter(app);
     competenceRouter(app);
     logRouter(app);
+    pdpRouter(app);
+    tlcRouter(app);
 
     // Versions of the mobile application, read by the app at start-up (B28)
     app.get(`/api/app/version`, (_req: Request, res: Response) => {

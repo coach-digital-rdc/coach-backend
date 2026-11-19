@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { constants } from "http2";
 import { CoachService } from "../service";
+import { getScopedRegionIds } from "../../helpers/scope";
 import Authentication from "../../auth/service";
 
 const {
@@ -68,11 +69,12 @@ export default class CoachController {
   };
 
   public static findAll = async (
-    _req: Request,
+    req: Request<any, any, any, { regionId?: string }>,
     res: Response
   ): Promise<any> => {
     try {
-      const list = await CoachService.findAll();
+      const regionIds = await getScopedRegionIds(res, req.query.regionId);
+      const list = await CoachService.findAll(regionIds);
       return res.status(HTTP_STATUS_OK).send(list);
     } catch (error) {
       res.status(HTTP_STATUS_INTERNAL_SERVER_ERROR).send({

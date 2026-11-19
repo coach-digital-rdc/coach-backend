@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { constants } from "http2";
 import { TeacherService } from "../service";
+import { getScopedRegionIds } from "../../helpers/scope";
 
 const {
   HTTP_STATUS_OK,
@@ -47,11 +48,12 @@ export default class TeacherController {
   };
 
   public static findAll = async (
-    _req: Request,
+    req: Request<any, any, any, { regionId?: string }>,
     res: Response
   ): Promise<any> => {
     try {
-      const list = await TeacherService.findAll();
+      const regionIds = await getScopedRegionIds(res, req.query.regionId);
+      const list = await TeacherService.findAll(regionIds);
       return res.status(HTTP_STATUS_OK).send(list);
     } catch (error) {
       res.status(HTTP_STATUS_INTERNAL_SERVER_ERROR).send({
