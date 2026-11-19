@@ -169,6 +169,57 @@ export class SessionService {
     };
   };
 
+  // Results of every session of the scope, for the Excel exports of the administration
+  static exportData = async (regionIds?: string[]) => {
+    const sessions = await SessionService.findAll(regionIds);
+    const ids = sessions.map((session) => session.id);
+    const bySessions = { where: { session_id: In(ids), deleted_at: IsNull() } };
+    const [scores, answers, documentations, pdps, competencies, checklist] =
+      await Promise.all([
+        dataSource.getRepository(CompetenceScore).find(bySessions),
+        dataSource.getRepository(Answer).find({
+          ...bySessions,
+          select: {
+            session_id: true,
+            question_id: true,
+            value: true,
+            not_applicable: true,
+          },
+          loadEagerRelations: false,
+        }),
+        dataSource.getRepository(Documentation).find(bySessions),
+        dataSource.getRepository(Pdp).find(bySessions),
+        dataSource.getRepository(Competence).find({
+          where: { deleted_at: IsNull() },
+          relations: { questions: true },
+          order: { display_order: "ASC", questions: { display_order: "ASC" } },
+        }),
+        dataSource.getRepository(ChecklistItem).find({
+          where: { deleted_at: IsNull() },
+          order: { display_order: "ASC" },
+        }),
+      ]);
+    const objectives = pdps.length
+      ? await dataSource.getRepository(PdpObjective).find({
+          where: {
+            pdp_id: In(pdps.map((pdp) => pdp.id)),
+            deleted_at: IsNull(),
+          },
+          order: { rank: "ASC" },
+        })
+      : [];
+    return {
+      sessions,
+      scores,
+      answers,
+      documentations,
+      pdps,
+      objectives,
+      competencies,
+      checklist,
+    };
+  };
+
   static getSessionData = async (
     period?: string,
     regionIds?: string,

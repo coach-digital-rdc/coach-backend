@@ -70,6 +70,15 @@ export default {
         }
       }
     },
+    "/session/export": {
+      "get": {
+        "tags": ["Session"],
+        "summary": "Results of every session in the scope of the user, for the Excel exports: sessions, global scores, answers, checklist, PDPs and objectives, with the grid and the checklist",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [{ "name": "regionId", "in": "query", "required": false, "schema": { "type": "string" }, "description": "Region and its sub-regions" }],
+        "responses": { "200": { "description": "Success" } }
+      }
+    },
     "/session/{id}/details": {
       "get": {
         "tags": [

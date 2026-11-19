@@ -21,6 +21,11 @@ const sessionRouter = (app: Application): void => {
     SessionController.delete
   );
   app.get(
+    `/api/session/export`,
+    Authentication.authenticate,
+    SessionController.exportData
+  );
+  app.get(
     `/api/session/:id/details`,
     Authentication.authenticate,
     SessionController.findDetails

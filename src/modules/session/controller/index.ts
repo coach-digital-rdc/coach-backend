@@ -65,6 +65,23 @@ export default class SessionController {
     }
   };
 
+  public static exportData = async (
+    req: Request<any, any, any, { regionId?: string }>,
+    res: Response
+  ): Promise<any> => {
+    try {
+      const regionIds = await getScopedRegionIds(res, req.query.regionId);
+      return res
+        .status(HTTP_STATUS_OK)
+        .send(await SessionService.exportData(regionIds));
+    } catch (error) {
+      res.status(HTTP_STATUS_INTERNAL_SERVER_ERROR).send({
+        error: HTTP_STATUS_INTERNAL_SERVER_ERROR,
+        message: (error as any).message,
+      });
+    }
+  };
+
   public static findDetails = async (
     req: Request,
     res: Response
